@@ -1,4 +1,4 @@
-# Microverse Capstion Project - Energy Tracker
+# Microverse Capstone Project - Energy Tracker
 React Rails Redux
 
 ### Snapshot
