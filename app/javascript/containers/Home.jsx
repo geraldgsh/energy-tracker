@@ -6,6 +6,6 @@ import Signup from '../components/Signup';
 export default () => (
   <div>
     <Head />
-    <Signup />     
+    <Signup />
   </div>  
 );
