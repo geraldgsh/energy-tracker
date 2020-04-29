@@ -1,0 +1,119 @@
+@import 'bootstrap/dist/css/bootstrap';
+@import "font-awesome";
+
+$blue: #42B5E8;
+$gray: #acafb4;
+$green: #22C65B;
+$grey: #313944;
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-grey {
+  background-color: $grey;
+}
+
+nav {
+  h1 {
+    color: white;
+    font-weight: 600;
+  }
+}
+
+.navbar-brand.abs {
+  text-align: center;
+  width: 100%;
+}
+
+.text-content {
+  margin-top: 70px;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  height: 50px;
+}
+
+.nav-pills 
+.nav-link.active,
+.nav-pills
+.show > .nav-link {
+	color: #fff;
+	background-color: $blue !important;
+}
+
+.tablist {
+  .col {
+    padding-left: unset;
+    padding-right: unset;
+  }
+}
+
+.nav-pills .nav-link {
+  border-radius: 0 !important;
+  color: $gray;
+  i {
+    font-size: 1.5em;
+    line-height: 1.3;
+  }
+  p {
+    font-size: 13px;
+    line-height: 17px;
+  }
+}
+
+.nav-link {
+  padding: 0 !important;
+}
+
+.sign-in-up .left-inner-addon {
+  position: relative;
+}
+
+.sign-in-up .left-inner-addon input {
+  padding-left: 30px;
+}
+
+.sign-in-up .left-inner-addon i {
+  position: absolute;
+  padding: 10px 12px;
+  pointer-events: none;
+}
+
+.sign-in-up .right-inner-addon {
+  position: relative;
+}
+
+.sign-in-up .right-inner-addon input {
+  padding-right: 30px;
+}
+
+.sign-in-up .right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 17px 12px;
+  pointer-events: none;
+}
+
+.sign-in-up .click2select {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.sign-in-up .paywith {
+  padding: 12px 12px 0 0;
+  margin: 0;
+  font-weight: bold;
+}
+.btn-danger, .btn-danger:hover {
+  background-color: $green;
+  border-color: $green;
+}
+.btn-primary, .btn-primary:hover {
+  background-color: $blue;
+  border-color: $blue;
+}
+  input[type="text"], input[type="password"], .btn {
+  border-radius: 0px;
+}
