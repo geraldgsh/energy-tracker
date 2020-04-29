@@ -1,15 +1,23 @@
 import React from 'react';
 
 const Signup = () => (
-  <div class="container text-content sign-in-up">
+  <div className="container text-content sign-in-up">
     <div className="row justify-content-center">
       <div className="col-md-4 col-md-offset-4">
         <br />
         {/* Nav tabs */}
         <div className="text-center">
           <div className="btn-group">
-            <a href="#new" role="tab" data-toggle="tab" className="big btn btn-primary"><i className="fa fa-plus"></i> Create Account</a>
-            <a href="#user" role="tab" data-toggle="tab" className="big btn btn-success"><i className="fa fa-user"></i> Login</a>
+            <a href="#new" role="tab" data-toggle="tab" className="big btn btn-primary">
+              <i className="fa fa-plus" />
+              {' '}
+              Create Account
+            </a>
+            <a href="#user" role="tab" data-toggle="tab" className="big btn btn-success">
+              <i className="fa fa-user" />
+              {' '}
+              Login
+            </a>
           </div>
         </div>
         <p className="click2select">Tap to select</p>
@@ -19,24 +27,24 @@ const Signup = () => (
             <fieldset>
               <div className="form-group">
                 <div className="right-inner-addon">
-                  <i className="fa fa-envelope"></i>
+                  <i className="fa fa-envelope" />
                   <input className="form-control input-lg" placeholder="Email" type="text" />
                 </div>
               </div>
               <div className="form-group">
                 <div className="right-inner-addon">
-                  <i className="fa fa-key"></i>
+                  <i className="fa fa-key" />
                   <input className="form-control input-lg" placeholder="Password" type="password" />
-                </div>           
+                </div>
               </div>
               <div className="form-group">
                 <div className="right-inner-addon">
-                  <i className="fa fa-key"></i>
+                  <i className="fa fa-key" />
                   <input className="form-control input-lg" placeholder="Confirm Password" id="" type="password" />
                 </div>
               </div>
               <div className="form-group">
-                <select class="custom-select custom-select-md">
+                <select className="custom-select custom-select-md">
                   <option selected>Choose monthly units</option>
                   <option value="1800">1800</option>
                   <option value="2100">2100</option>
@@ -46,7 +54,7 @@ const Signup = () => (
                 </select>
               </div>
               <div className="form-group">
-                <select class="custom-select custom-select-md">
+                <select className="custom-select custom-select-md">
                   <option selected>Choose month target savings</option>
                   <option value="5">5%</option>
                   <option value="10">10%</option>
@@ -54,12 +62,16 @@ const Signup = () => (
                   <option value="20">20%</option>
                   <option value="25">25%</option>
                 </select>
-              </div>                  
+              </div>
             </fieldset>
             <hr />
             <div className="tab-content">
               <div className="tab-pane active text-center" id="pp">
-                <button className="btn btn-primary btn-lg btn-block"><i className="fa fa-plus"></i> Create Account</button>
+                <button className="btn btn-primary btn-lg btn-block" type="button">
+                  <i className="fa fa-plus" />
+                  {' '}
+                  Create Account
+                </button>
               </div>
             </div>
           </div>
@@ -68,20 +80,24 @@ const Signup = () => (
             <fieldset>
               <div className="form-group">
                 <div className="right-inner-addon">
-                  <i className="fa fa-envelope"></i>
+                  <i className="fa fa-envelope" />
                   <input className="form-control input-lg" placeholder="Email" type="text" />
                 </div>
               </div>
               <div className="form-group">
                 <div className="right-inner-addon">
-                  <i className="fa fa-key"></i>
+                  <i className="fa fa-key" />
                   <input className="form-control input-lg" placeholder="Password" type="password" />
                 </div>
               </div>
             </fieldset>
             <br />
             <div className=" text-center">
-              <button className="btn btn-primary btn-success"><i className="fa fa-user"></i> LOGIN</button>
+              <button className="btn btn-primary btn-success" type="button">
+                <i className="fa fa-user" />
+                {' '}
+                LOGIN
+              </button>
             </div>
           </div>
         </div>
@@ -90,4 +106,4 @@ const Signup = () => (
   </div>
 );
 
-export default Signup
+export default Signup;
