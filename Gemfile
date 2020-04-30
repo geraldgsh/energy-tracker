@@ -22,7 +22,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
 gem 'faker'
-gem 'devise'
 gem 'rubocop'
 
 # Use Active Storage variant

@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios"
 import Signin from './Signin'
 
 class Signup extends React.Component {
@@ -10,10 +11,41 @@ class Signup extends React.Component {
       password: '',
       units: '',
       target: '',
-    }   
+    }
+  }
+  handleChange(e) {
+    this.setState(
+      {
+        [e.target.id]: e.target.value
+      }
+    )
+  }
+  onSubmit(e) {
+    e.preventDefault();
+    let { name, email, password, units, target } = this.state;
+    
+    axios.post("/api/users", {
+      users: {
+        name, email, password, units, target
+      }
+    })
+    .then(response => response.data)
+    .then(response => {
+      if (response.code === 200) {
+        this.setState({
+          name: '',
+          email: '',
+          password: '',
+          units: '',
+          target: '',
+        })
+      } else if (response.code == 400) {
+        console.log(response);
+      }
+    })
   }
   render() {
-    let { name, email, password, units, target} = this.state;
+    let { name, email, password, units, target } = this.state;
     return (
       <div className="container text-content sign-in-up">
         <div className="row justify-content-center">
@@ -79,26 +111,13 @@ class Signup extends React.Component {
                     </div>
                   </div>
                   <div className="form-group">
-                    <div className="right-inner-addon">
-                      <i className="fa fa-key" />
-                      <input 
-                        className="form-control input-lg" 
-                        placeholder="Password" 
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={e => this.handleChange(e)}
-                      />
-                    </div>
-                  </div>
-                  <div className="form-group">
                     <select 
                       className="custom-select custom-select-md"
                       id="units"
                       value={units}
                       onChange={e => this.handleChange(e)}
                     >
-                      <option selected>Choose monthly units</option>
+                      <option>Choose monthly units</option>
                       <option value="1800">1800</option>
                       <option value="2100">2100</option>
                       <option value="2400">2400</option>
@@ -113,7 +132,7 @@ class Signup extends React.Component {
                       value={target}
                       onChange={e => this.handleChange(e)}
                     >
-                      <option selected>Choose month target savings</option>
+                      <option>Choose month target savings</option>
                       <option value="5">5%</option>
                       <option value="10">10%</option>
                       <option value="15">15%</option>
@@ -125,7 +144,11 @@ class Signup extends React.Component {
                 <hr />
                 <div className="tab-content">
                   <div className="tab-pane active text-center" id="pp">
-                    <button className="btn btn-primary btn-lg btn-block" type="button">
+                    <button 
+                      className="btn btn-primary btn-lg btn-block" 
+                      type="submit"
+                      onClick={(e) => this.onSubmit(e)}
+                    >
                       <i className="fa fa-plus" />
                       {' '}
                       Create Account
