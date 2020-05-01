@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios"
-// import {connect} from "react-redux";
-// import {SIGNEDIN} from "../utils/redux/actions"
+import {connect} from "react-redux";
+import {SIGNEDIN} from "../actions"
 
 class Signin extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Signin extends React.Component {
       then(response => {        
         if (response.code == 200) {
           this.props.login(response.user.name)
-          // this.props.history.push("/readings")
+          this.props.history.push("/readings")
         } else if (response.code == 400) {
           this.setState({
             errors: response.errors,
@@ -92,4 +92,12 @@ class Signin extends React.Component {
   }
 }
 
-export default Signin;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: (name => {
+      dispatch(SIGNEDIN(name))
+    })
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Signin);
