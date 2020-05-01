@@ -1164,10 +1164,10 @@
     lodash "^4.17.11"
     lodash.flatten "^4.4.0"
 
-"@heroku-cli/plugin-pg-v5@^7.39.2":
-  version "7.39.2"
-  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pg-v5/-/plugin-pg-v5-7.39.2.tgz#916112cdfaa7ae0d7f2e6dc460423c1337e792a8"
-  integrity sha512-i4WWw1FN3ThT7LGUp2uFhOziG2w8OV0IZTse2bJlP9tm7rAJG35pV0u6S1tsf45Sr59IWNWoayl0TmOzoLC7zA==
+"@heroku-cli/plugin-pg-v5@^7.39.6":
+  version "7.39.6"
+  resolved "https://registry.yarnpkg.com/@heroku-cli/plugin-pg-v5/-/plugin-pg-v5-7.39.6.tgz#7d81bec23a62962c43d1b2ac0586dadba9e59dc7"
+  integrity sha512-FsczkIvsjAB1l2NQLLq0sqMuKJmaJ2JZAbytjQMx14Suend2vHF+ymhm+jU0GVOWKWD+pbmGGqaJQgXNvnXw8w==
   dependencies:
     "@heroku-cli/plugin-addons" "^1.2.29"
     bytes "^3.1.0"
@@ -4924,9 +4924,9 @@ heroku-exec-util@0.7.5:
     uuid "3.2.1"
 
 heroku@^7.39.5:
-  version "7.39.5"
-  resolved "https://registry.yarnpkg.com/heroku/-/heroku-7.39.5.tgz#082c716111114faf11bbf1afec7cf2820e9765a0"
-  integrity sha512-t0HTpt0diDrVwZO+4hlxJLbBCIRI4yQKzEPDADesoDytdo1s9p+I43vySRxje50R1mb6golY/vXoOgc5h6brew==
+  version "7.39.6"
+  resolved "https://registry.yarnpkg.com/heroku/-/heroku-7.39.6.tgz#f871403f0ed4f1afb9349961175ae2463c386806"
+  integrity sha512-24HNPdexsyK6BDHAi5ARTMwM2evLp8AY43sv6q3wjiARH07LB689nZZSq+kL2t/3tshJyazzabJ3dMpfrysjQg==
   dependencies:
     "@heroku-cli/color" "1.1.14"
     "@heroku-cli/command" "^8.3.0"
@@ -4946,7 +4946,7 @@ heroku@^7.39.5:
     "@heroku-cli/plugin-local" "^7.39.2"
     "@heroku-cli/plugin-oauth-v5" "^7.39.3"
     "@heroku-cli/plugin-orgs-v5" "^7.39.2"
-    "@heroku-cli/plugin-pg-v5" "^7.39.2"
+    "@heroku-cli/plugin-pg-v5" "^7.39.6"
     "@heroku-cli/plugin-pipelines" "^7.38.1"
     "@heroku-cli/plugin-ps" "^7.39.3"
     "@heroku-cli/plugin-ps-exec" "2.3.8"

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[create show]
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       render json: {
         code: 200

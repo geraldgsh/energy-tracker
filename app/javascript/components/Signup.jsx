@@ -25,14 +25,13 @@ class Signup extends React.Component {
     e.preventDefault();
     let { name, email, password, units, target } = this.state;
     
-    axios.post("/api/users", {
-      users: {
-        name, email, password, units, target,
-      }
+    axios.post("/api/users", {      
+        name, email, password, units, target,      
     })
       .then(response => response.data)
       .then(response => {
         if (response.code == 400) {
+          console.log(response);
           this.setState({
             errors: response.errors,
           })
