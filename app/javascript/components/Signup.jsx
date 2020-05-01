@@ -11,6 +11,7 @@ class Signup extends React.Component {
       password: '',
       units: '',
       target: '',
+      errors: {},
     }
   }
   handleChange(e) {
@@ -26,23 +27,27 @@ class Signup extends React.Component {
     
     axios.post("/api/users", {
       users: {
-        name, email, password, units, target
+        name, email, password, units, target,
       }
     })
-    .then(response => response.data)
-    .then(response => {
-      if (response.code === 200) {
-        this.setState({
-          name: '',
-          email: '',
-          password: '',
-          units: '',
-          target: '',
-        })
-      } else if (response.code == 400) {
-        console.log(response);
+      .then(response => response.data)
+      .then(response => {
+        if (response.code == 400) {
+          this.setState({
+            errors: response.errors,
+          })
+        } else if (response.code == 200) {
+          this.setState({
+            name: "",
+            email: "",
+            password: "",
+            units: "",
+            target: "",
+            errors: {},
+          })
+        }
       }
-    })
+    )
   }
   render() {
     let { name, email, password, units, target } = this.state;
