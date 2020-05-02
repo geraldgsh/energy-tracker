@@ -6,6 +6,7 @@ import reducer from "../reducer/sessions"
 import { Provider } from "react-redux"
 import { compose, createStore } from 'redux';
 import persistState from 'redux-localstorage'
+import PrivateRoute from "./privateRoute"
 
 const store = createStore(
   reducer, compose(persistState())
@@ -16,7 +17,7 @@ export default (
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/readings" exact component={Readings} />
+        <PrivateRoute path="/readings" component={Readings} />
       </Switch>
     </Router>
   </Provider>  

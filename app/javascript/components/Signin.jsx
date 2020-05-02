@@ -45,49 +45,49 @@ class Signin extends React.Component {
   render() {
     let { email, password } = this.state;
     return (
-      <div className="tab-pane fade" id="user">
-        <br />
-        <fieldset>
-          <div className="form-group">
-            <div className="right-inner-addon">
-              <i className="fa fa-envelope" />
-              <input 
-                className="form-control input-lg" 
-                placeholder="Email" 
-                type="text"
-                id="email"
-                value={email} 
-                onChange={e => this.handleChange(e)}
-              />
-            </div>
+    <div className="tab-pane" id="user">
+      <br />
+      <fieldset>
+        <div className="form-group">
+          <div className="right-inner-addon">
+            <i className="fa fa-envelope" />
+            <input 
+              className="form-control input-lg" 
+              placeholder="Email" 
+              type="text"
+              id="email"
+              value={email} 
+              onChange={e => this.handleChange(e)}
+            />
           </div>
-          <div className="form-group">
-            <div className="right-inner-addon">
-              <i className="fa fa-key" />
-              <input 
-                className="form-control input-lg" 
-                placeholder="Password" 
-                type="password"
-                id="password"
-                value={password}
-                onChange={e => this.handleChange(e)}
-              />
-            </div>
-          </div>
-        </fieldset>
-        <br />
-        <div className=" text-center">
-          <button 
-            className="btn btn-primary btn-success" 
-            type="button"
-            onClick={(e) => this.onSubmit(e)}
-          >
-            <i className="fa fa-user" />
-            {' '}
-            LOGIN
-          </button>
         </div>
+        <div className="form-group">
+          <div className="right-inner-addon">
+            <i className="fa fa-key" />
+            <input 
+              className="form-control input-lg" 
+              placeholder="Password" 
+              type="password"
+              id="password"
+              value={password}
+              onChange={e => this.handleChange(e)}
+            />
+          </div>
+        </div>
+      </fieldset>
+      <br />
+      <div className=" text-center">
+        <button 
+          className="btn btn-primary btn-success" 
+          type="button"
+          onClick={(e) => this.onSubmit(e)}
+        >
+          <i className="fa fa-user" />
+          {' '}
+          LOGIN
+        </button>
       </div>
+    </div>    
     )
   }
 }
