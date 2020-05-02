@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   scope "/api" do
     resources :users, only: [:create]
     scope :users do
-      resources :readings
+      resources :sessions,only: [:create],module: :users
     end
   end
 end

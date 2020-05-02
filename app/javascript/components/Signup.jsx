@@ -9,6 +9,7 @@ class Signup extends React.Component {
       name: '',
       email: '',
       password: '',
+      password_confirmation: '',
       units: '',
       target: '',
       errors: {},
@@ -23,10 +24,10 @@ class Signup extends React.Component {
   }
   onSubmit(e) {
     e.preventDefault();
-    let { name, email, password, units, target } = this.state;
+    let { name, email, password, password_confirmation, units, target } = this.state;
     
     axios.post("/api/users", {      
-        name, email, password, units, target,      
+        name, email, password, password_confirmation, units, target,      
     })
       .then(response => response.data)
       .then(response => {
@@ -40,6 +41,7 @@ class Signup extends React.Component {
             name: "",
             email: "",
             password: "",
+            password_confirmation: '',
             units: "",
             target: "",
             errors: {},
@@ -49,7 +51,7 @@ class Signup extends React.Component {
     )
   }
   render() {
-    let { name, email, password, units, target } = this.state;
+    let { name, email, password, password_confirmation, units, target } = this.state;
     return (
       <div className="container text-content sign-in-up">
         <div className="row justify-content-center">
@@ -110,6 +112,19 @@ class Signup extends React.Component {
                         type="password"
                         id="password"
                         value={password}
+                        onChange={e => this.handleChange(e)}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <div className="right-inner-addon">
+                      <i className="fa fa-key" />
+                      <input 
+                        className="form-control input-lg" 
+                        placeholder="Password Confirmation" 
+                        type="password"
+                        id="password_confirmation"
+                        value={password_confirmation}
                         onChange={e => this.handleChange(e)}
                       />
                     </div>

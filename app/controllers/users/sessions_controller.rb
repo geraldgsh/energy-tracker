@@ -3,7 +3,7 @@ class Users::SessionsController < ApplicationController
   
   def create
     @user = User.find_by(email: params[:user][:email])
-    if @user && @user.authenticate(params[:user][:password])
+    if @user && @user.authenticate(params[:user][:password_digest])
       login @user
       render json: {
         code: 200,
@@ -26,6 +26,6 @@ class Users::SessionsController < ApplicationController
 
   private
   def user_params
-    params[:user].permit(:email, :password)
+    params[:user].permit(:email, :password_digest)
   end
 end
