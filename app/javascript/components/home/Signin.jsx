@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios"
 import {connect} from "react-redux";
-import {SIGNEDIN} from "../actions"
+import {SIGNEDIN} from "../../actions"
 
 class Signin extends React.Component {
   constructor(props) {

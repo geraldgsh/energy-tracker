@@ -1,8 +1,8 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import Head from '../components/Head';
-import Signin from '../components/Signin';
-import Signup from '../components/Signup';
+import Head from '../components/home/Head';
+import Signin from '../components/home/Signin';
+import Signup from '../components/home/Signup';
 
 class Home extends React.Component {
   constructor(props) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from "axios"
-import Signin from './Signin'
 
 class Signup extends React.Component {
   constructor(props) {
