@@ -12,22 +12,21 @@ function Bedroom(props) {
           <h4>Take your Bedroom Reading</h4>
         </div>
         <div className="graph-content">
-          <InputGraph strokeWidth={2} percentage={60} />
+          <InputGraph strokeWidth={2} percentage={props.bedroom} />
         </div>       
       </div>
       <div className="row justify-content-center reading-input">      
         <input
           className="form-control"
-          id="email"
+          id="bedroom"
           name="bedroom"
           type="number"
-          placeholder="Enter bedroom"
+          placeholder="Enter bedroom reading"
           value={props.bedroom}
           onChange={props.handleChange}
         />      
       </div>
-    </React.Fragment>
-    
+    </React.Fragment>    
   );
 }
 
@@ -36,20 +35,27 @@ function Study(props) {
     return null
   } 
   return(
-    <React.Fragment>
-      <div className="form-group">
-        <label htmlFor="study">Study</label>
+    <React.Fragment>         
+      <div className="row justify-content-center">
+        <div className="row justify-content-center reading-header">
+          <h4>Take your Study room Reading</h4>
+        </div>
+        <div className="graph-content">
+          <InputGraph strokeWidth={2} percentage={props.study} />
+        </div>       
+      </div>
+      <div className="row justify-content-center reading-input">      
         <input
           className="form-control"
           id="study"
           name="study"
           type="number"
-          placeholder="Enter study"
+          placeholder="Enter study reading"
           value={props.study}
           onChange={props.handleChange}
-        />
+        />      
       </div>
-    </React.Fragment>
+    </React.Fragment>  
   );
 }
 
@@ -58,18 +64,25 @@ function Garage(props) {
     return null
   } 
   return(
-    <React.Fragment>
-      <div className="form-group">
-        <label htmlFor="garage">Garage</label>
+    <React.Fragment>         
+      <div className="row justify-content-center">
+        <div className="row justify-content-center reading-header">
+          <h4>Take your Garage Reading</h4>
+        </div>
+        <div className="graph-content">
+          <InputGraph strokeWidth={2} percentage={props.garage} />
+        </div>       
+      </div>
+      <div className="row justify-content-center reading-input">      
         <input
           className="form-control"
           id="garage"
           name="garage"
           type="number"
-          placeholder="Enter garage"
+          placeholder="Enter garage reading"
           value={props.garage}
           onChange={props.handleChange}
-          />
+        />      
       </div>
     </React.Fragment>    
   );
@@ -80,20 +93,27 @@ function Living(props) {
     return null
   } 
   return(
-    <React.Fragment>
-      <div className="form-group">
-        <label htmlFor="living">Living</label>
+    <React.Fragment>         
+      <div className="row justify-content-center">
+        <div className="row justify-content-center reading-header">
+          <h4>Take your Living Room Reading</h4>
+        </div>
+        <div className="graph-content">
+          <InputGraph strokeWidth={2} percentage={props.living} />
+        </div>       
+      </div>
+      <div className="row justify-content-center reading-input">      
         <input
           className="form-control"
           id="living"
           name="living"
           type="number"
-          placeholder="Enter living"
+          placeholder="Enter living reading"
           value={props.living}
           onChange={props.handleChange}
-          />
+        />      
       </div>
-    </React.Fragment>    
+    </React.Fragment>  
   );
 }
 
@@ -102,18 +122,25 @@ function Kitchen(props) {
     return null
   } 
   return(
-    <React.Fragment>
-      <div className="form-group">
-        <label htmlFor="kitchen">Kitchen</label>
+    <React.Fragment>         
+      <div className="row justify-content-center">
+        <div className="row justify-content-center reading-header">
+          <h4>Take your Kitchen Reading</h4>
+        </div>
+        <div className="graph-content">
+          <InputGraph strokeWidth={2} percentage={props.kitchen} />
+        </div>       
+      </div>
+      <div className="row justify-content-center reading-input">      
         <input
           className="form-control"
           id="kitchen"
           name="kitchen"
           type="number"
-          placeholder="Enter kitchen"
+          placeholder="Enter kitchen reading"
           value={props.kitchen}
           onChange={props.handleChange}
-          />
+        />      
       </div>
     </React.Fragment>    
   );
@@ -125,18 +152,25 @@ function Guest(props) {
   } 
   return(
     <React.Fragment>
-    <div className="form-group">
-      <label htmlFor="guest">Guest</label>
-      <input
-        className="form-control"
-        id="guest"
-        name="guest"
-        type="number"
-        placeholder="Enter guest"
-        value={props.guest}
-        onChange={props.handleChange}
+      <div className="row justify-content-center">
+        <div className="row justify-content-center reading-header">
+          <h4>Take your Guest Room Reading</h4>
+        </div>
+        <div className="graph-content">
+          <InputGraph strokeWidth={2} percentage={props.guest} />
+        </div>       
+      </div>
+      <div className="row justify-content-center reading-input">      
+        <input
+          className="form-control"
+          id="guest"
+          name="guest"
+          type="number"
+          placeholder="Enter guest reading"
+          value={props.guest}
+          onChange={props.handleChange}
         />      
-    </div>
+      </div>
     <button className="btn btn-success btn-block">Submit</button>
     </React.Fragment>
   );
@@ -241,38 +275,39 @@ class ReadingForm extends React.Component {
   }
 
   render() {
+    let { num } = this.props
     return (
       <React.Fragment>
         <form id="regForm" onSubmit={this.handleSubmit}>
           <Bedroom
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            email={this.state.bedroom}
+            bedroom={this.state.bedroom}
           />
           <Study 
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            username={this.state.study}
+            study={this.state.study}
           />
           <Garage
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            username={this.state.garage}
+            garage={this.state.garage}
           />
           <Living 
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            username={this.state.living}
+            living={this.state.living}
           />
           <Kitchen 
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            username={this.state.kitchen}
+            kitchen={this.state.kitchen}
           />
           <Guest
             currentStep={this.state.currentStep} 
             handleChange={this.handleChange}
-            password={this.state.guest}
+            guest={this.state.guest}
           />
           <div className="row justify-content-center btn-box">
             {this.previousButton()}
