@@ -25,7 +25,7 @@ class Navbar extends React.Component {
               </a>
             </li>
             <li className="col foot-col nav-item">
-              <a className="nav-link" data-toggle="pill" href="#">
+              <a onClick={() =>  window.location.href='/reading'} className="nav-link" data-toggle="pill" href="#">
                 <i className="fas fa-chart-pie" />
                 <p>Report</p>
               </a>

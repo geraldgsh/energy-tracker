@@ -7,10 +7,10 @@ export function Bedroom(props) {
   } 
   return(
     <React.Fragment>
-      <div className="row justify-content-center">
-        <div className="row justify-content-center reading-header">
-          <h4>Take your Bedroom Reading</h4>
-        </div>
+      <div className="row justify-content-center reading-header">
+        <h4>Take your Bedroom Reading</h4>
+      </div>
+      <div className="row justify-content-center">        
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.bedroom} />
         </div>       
@@ -35,11 +35,11 @@ export function Study(props) {
     return null
   } 
   return(
-    <React.Fragment>         
-      <div className="row justify-content-center">
-        <div className="row justify-content-center reading-header">
-          <h4>Take your Study room Reading</h4>
-        </div>
+    <React.Fragment>
+      <div className="row justify-content-center reading-header">
+        <h4>Take your Study room Reading</h4>
+      </div>         
+      <div className="row justify-content-center">        
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.study} />
         </div>       
@@ -64,11 +64,11 @@ export function Garage(props) {
     return null
   } 
   return(
-    <React.Fragment>         
+    <React.Fragment>
+      <div className="row justify-content-center reading-header">
+        <h4>Take your Garage Reading</h4>
+      </div>         
       <div className="row justify-content-center">
-        <div className="row justify-content-center reading-header">
-          <h4>Take your Garage Reading</h4>
-        </div>
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.garage} />
         </div>       
@@ -93,11 +93,11 @@ export function Living(props) {
     return null
   } 
   return(
-    <React.Fragment>         
+    <React.Fragment>
+      <div className="row justify-content-center reading-header">
+        <h4>Take your Living Room Reading</h4>
+      </div>         
       <div className="row justify-content-center">
-        <div className="row justify-content-center reading-header">
-          <h4>Take your Living Room Reading</h4>
-        </div>
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.living} />
         </div>       
@@ -122,11 +122,11 @@ export function Kitchen(props) {
     return null
   } 
   return(
-    <React.Fragment>         
+    <React.Fragment>
+      <div className="row justify-content-center reading-header">
+        <h4>Take your Kitchen Reading</h4>
+      </div>         
       <div className="row justify-content-center">
-        <div className="row justify-content-center reading-header">
-          <h4>Take your Kitchen Reading</h4>
-        </div>
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.kitchen} />
         </div>       
@@ -152,10 +152,10 @@ export function Guest(props) {
   } 
   return(
     <React.Fragment>
+      <div className="row justify-content-center reading-header">
+        <h4>Take your Guest Room Reading</h4>
+      </div>
       <div className="row justify-content-center">
-        <div className="row justify-content-center reading-header">
-          <h4>Take your Guest Room Reading</h4>
-        </div>
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.guest} />
         </div>       
