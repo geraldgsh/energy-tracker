@@ -13,7 +13,7 @@ class ReadingForm extends React.Component {
     super(props);
     this.state = {
       currentStep: 1,
-      bedroom:  '',
+      bedroom: '',
       study: '',
       garage: '',
       living: '',

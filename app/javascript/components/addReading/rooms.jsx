@@ -6,7 +6,7 @@ export function Bedroom(props) {
     return null
   } 
   return(
-    <React.Fragment>         
+    <React.Fragment>
       <div className="row justify-content-center">
         <div className="row justify-content-center reading-header">
           <h4>Take your Bedroom Reading</h4>
