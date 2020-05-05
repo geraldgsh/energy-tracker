@@ -5,6 +5,12 @@ $blue: #42B5E8;
 $gray: #acafb4;
 $green: #22C65B;
 $grey: #313944;
+$lighter-gray: #f3f4f6;
+
+body {
+  background-color: $lighter-gray !important;
+  height: 100%;
+}
 
 .bg-blue {
   background-color: $blue;
@@ -116,4 +122,135 @@ nav {
 }
   input[type="text"], input[type="password"], .btn {
   border-radius: 0px;
+}
+
+#regForm {
+  background-color: #f3f4f6;
+  height: 100vh;
+  margin: auto;
+  margin-bottom: 2em;
+  padding: 0 40px 40px 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+
+.btn-box {
+  background-color: white;
+  
+  button {
+    background-color: #a9dc95;    
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;    
+    font-size: 17px;
+    cursor: pointer;
+    margin: 0.25em 0 0.25em 0;
+    padding: 15px 65px;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+
+  #nextBtn {
+    margin-right: 0.25em;
+  }
+  
+  #prevBtn {
+    background-color: white;
+    color: #bbbbbb;
+    margin-left: 0.25em;
+  }
+}
+
+.reading-header {
+  background-color: white;
+  height: 75px;
+  text-align: center;
+  h4 {
+    margin: auto;
+    padding: auto;
+  }
+}
+
+.graph-content {
+  margin: 10% 0 10% 0;
+}
+
+.reading-input {
+  margin: 5% 0 5% 0;
+}
+
+.full-width-row {
+  overflow-x: hidden;
+}
+
+.daily-stats {
+  background-color: #f3f4f6;
+  height: 100vh;
+  margin: auto;
+  margin-bottom: 2em;
+  padding: 0 0px 40px 0px;
+  width: 70%;
+  min-width: 300px;
+}
+
+.circular-dimension {
+  max-width: 40%;
+}
+
+.graph-box {
+  background-color: white;
+  justify-content: center;
+  .row {
+    .col {
+      max-width: 100%;
+    }
+  }
+}
+
+.circular-box {  
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; 
+}
+
+.room-card {  
+  margin: 10px 10px 10px 10px;
+  .row{
+    .col {
+      background-color: white;
+      padding: 10px 10px 10px 10px;
+      text-align: center;
+      i {
+        color: $blue;
+      }
+    }
+  }  
+}
+
+@media screen and (max-width: 720px) {
+  #regForm,
+  .daily-stats {
+    width: 100%;
+  }
+  .circular-dimension {
+    width: 100%;
+  }
+  .room-card {
+    .row {
+      .col {
+        i {
+          font-size: 3em;
+        }
+      }
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from "axios"
+import axios from "axios";
 import {connect} from "react-redux";
-import {SIGNEDIN} from "../actions"
+import {SIGNEDIN} from "../../actions";
 
 class Signin extends React.Component {
   constructor(props) {
@@ -31,9 +31,9 @@ class Signin extends React.Component {
     }).
       then(response => response.data).
       then(response => {        
-        if (response.code == 200) {
+        if (response.code == 200) {          
           this.props.login(response.user.name)
-          this.props.history.push("/readings")
+          console.log(response)          
         } else if (response.code == 400) {
           this.setState({
             errors: response.errors,
