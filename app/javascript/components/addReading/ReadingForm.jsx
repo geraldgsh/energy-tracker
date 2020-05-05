@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios";
 import {
   Bedroom,
   Study,
@@ -18,7 +19,7 @@ class ReadingForm extends React.Component {
       garage: '',
       living: '',
       kitchen: '',
-      guest: '', 
+      guest: '',
     };
   }
 
@@ -31,14 +32,44 @@ class ReadingForm extends React.Component {
    
   handleSubmit = event => {
     event.preventDefault()
-    const { bedroom, study, garage, living, kitchen, guest } = this.state
-    alert(`Your registration detail: \n 
-           Bedroom: ${bedroom}\n 
-           Study: ${study} \n
-           Garage: ${garage} \n
-           Living: ${living} \n
-           Kitchen: ${kitchen} \n
-           Guest: ${guest}`)
+    let { bedroom, study, garage, living, kitchen, guest } = this.state
+    let consumption = Number(bedroom) + Number(study) + Number(garage) + Number(living) + Number(kitchen) + Number(guest)
+    let available = (1800/30) - consumption
+    let saved = Math.floor(100 - (100 * (consumption/(1800/30))))
+    axios.post("/api/readings", {      
+      bedroom, study, garage, living, kitchen, guest, consumption, available, saved,      
+    })
+    .then(response => response.data)
+    .then(response => {
+      if (response.code == 400) {
+        console.log(response);
+        this.setState({
+          errors: response.errors,
+        })
+      } else if (response.code == 200) {
+        this.setState({
+          bedroom: "",
+          study: "",
+          garage: "",
+          living: '',
+          kitchen: "",
+          consumption: "",
+          available: "",
+          saved: "",
+        })
+      }
+    }
+  )
+  alert(`Your registration detail: \n 
+  Bedroom: ${bedroom}\n 
+  Study: ${study} \n
+  Garage: ${garage} \n
+  Living: ${living} \n
+  Kitchen: ${kitchen} \n
+  Guest: ${guest} \n
+  Consumption: ${consumption} \n
+  Available: ${available} \n
+  Saved: ${saved} %`)
   }
   
   _next = () => {
