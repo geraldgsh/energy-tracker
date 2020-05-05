@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory, Link } from "react-router-dom";
+import Signout from "./home/Signout"
 
 class Navbar extends React.Component {
 
@@ -32,8 +33,9 @@ class Navbar extends React.Component {
             </li>
             <li className="col foot-col nav-item">
               <a className="nav-link" data-toggle="pill" href="#">
-                <i className="fas fa-ellipsis-h" />
-                <p>More</p>
+                <Signout />
+                {/* <i className="fas fa-ellipsis-h" />
+                <p>More</p> */}
               </a>
             </li>
           </ul>

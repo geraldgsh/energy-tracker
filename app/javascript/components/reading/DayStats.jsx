@@ -4,19 +4,9 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-
-const Circle = (props) => {
-  return (
-    <div style={{ marginBottom: 20 }}>
-      <div className="circular-box">
-        <div className="circular-dimension">{props.children}</div>
-      </div>
-    </div>
-  );
-}
+import Circle from '../graph/OutputGraph';
 
 class DayStats extends React.Component {
-
   render() {
     const percentage = 66;
     return (
