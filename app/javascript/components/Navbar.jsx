@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory, Link } from "react-router-dom";
 import Signout from "./home/Signout"
 
 class Navbar extends React.Component {
