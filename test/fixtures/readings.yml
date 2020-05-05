@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bedroom: MyString
+  integer: MyString
+  study: MyString
+  integer: MyString
+  garage: MyString
+  integer: MyString
+  living: MyString
+  integer: MyString
+  kitchen: MyString
+  integer: MyString
+  guest: MyString
+  integer: MyString
+  consumption: MyString
+  integer: MyString
+  available: MyString
+  integer: MyString
+  saved: MyString
+  integer: MyString
+
+two:
+  bedroom: MyString
+  integer: MyString
+  study: MyString
+  integer: MyString
+  garage: MyString
+  integer: MyString
+  living: MyString
+  integer: MyString
+  kitchen: MyString
+  integer: MyString
+  guest: MyString
+  integer: MyString
+  consumption: MyString
+  integer: MyString
+  available: MyString
+  integer: MyString
+  saved: MyString
+  integer: MyString
