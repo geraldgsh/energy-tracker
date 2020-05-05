@@ -1,13 +1,8 @@
 import React from 'react';
-import { useHistory, Link } from "react-router-dom";
 import Signout from "./home/Signout"
 
 class Navbar extends React.Component {
 
-  goReadings() {
-    let history = useHistory();
-    history.push('/readings');
-  }
   render () {
     return (
       <footer id="sticky-footer" className="bg-grey fixed-bottom">
