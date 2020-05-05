@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import {connect} from "react-redux";
 import {SIGNEDIN} from "../../actions";
+import { withRouter } from "react-router-dom";
 
 class Signin extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Signin extends React.Component {
       then(response => {        
         if (response.code == 200) {          
           this.props.login(response.user.name)
-          console.log(response)          
+          this.props.history.push('/readings')                  
         } else if (response.code == 400) {
           this.setState({
             errors: response.errors,
@@ -44,6 +45,7 @@ class Signin extends React.Component {
   }
   render() {
     let { email, password } = this.state;
+    
     return (
     <div className="tab-pane" id="user">
       <br />
@@ -100,4 +102,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null,mapDispatchToProps)(Signin);
+export default withRouter(connect(null,mapDispatchToProps)(Signin));

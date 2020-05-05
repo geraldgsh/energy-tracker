@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
 import {SIGNEDOUT} from "../../actions";
 
 export class Signout extends Component {
@@ -14,7 +15,8 @@ export class Signout extends Component {
   }
 
   render() {
-    let {login, name} = this.props
+    let {login} = this.props;
+    if (login == false) return <Redirect to='/' />
     return (
       <React.Fragment>
         <button 
