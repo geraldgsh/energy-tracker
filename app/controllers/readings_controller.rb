@@ -44,7 +44,16 @@ class ReadingsController < ApplicationController
   private
 
   def reading_params
-    params.require(:reading).permit(:bedroom, :study, :garage, :living, :kitchen, :guest, :consumption, :available, :saved)
+    params.require(:reading).permit(
+      :bedroom,
+      :study,
+      :garage,
+      :living,
+      :kitchen,
+      :guest,
+      :consumption,
+      :available,
+      :saved
+    )
   end
-
 end

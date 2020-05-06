@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       units: params[:units],
-      target: params[:target],
+      target: params[:target]
     )
     if @user.save
       render json: {
@@ -22,9 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-  end
+  def index; end
 
-  def show
-  end
+  def show; end
 end
