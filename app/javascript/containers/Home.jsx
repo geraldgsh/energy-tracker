@@ -1,5 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import Head from '../components/home/Head';
 import Signin from '../components/home/Signin';
 import Signup from '../components/home/Signup';

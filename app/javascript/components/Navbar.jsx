@@ -1,7 +1,6 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-return-assign, jsx-a11y/anchor-is-valid, import/no-named-as-default */
 import React from 'react';
-import Signout from './home/Signout';
+import SignoutBtn from './home/Signout';
 
 const Navbar = () => (
   <footer id="sticky-footer" className="bg-grey fixed-bottom">
@@ -27,7 +26,7 @@ const Navbar = () => (
         </li>
         <li className="col foot-col nav-item">
           <a className="nav-link" data-toggle="pill" href="#">
-            <Signout />
+            <SignoutBtn />
             {/* <i className="fas fa-ellipsis-h" />
             <p>More</p> */}
           </a>

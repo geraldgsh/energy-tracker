@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { SIGNEDOUT } from '../../actions';
 
-export class Signout extends Component {
+export class SignoutBtn extends Component {
   onSubmit(e) {
     e.preventDefault();
     axios.delete('/api/users/sessions')
@@ -39,9 +39,9 @@ const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(SIGNEDOUT()),
 });
 
-Signout.propTypes = {
+SignoutBtn.propTypes = {
   login: PropTypes.bool.isRequired,
   logout: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signout);
+export default connect(mapStateToProps, mapDispatchToProps)(SignoutBtn);
