@@ -1,4 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-unused-state */
 import React from 'react';
+import axios from 'axios';
 import {
   Bedroom,
   Study,
@@ -6,7 +9,7 @@ import {
   Living,
   Kitchen,
   Guest,
-} from './Rooms'
+} from './Rooms';
 
 class ReadingForm extends React.Component {
   constructor(props) {
@@ -18,31 +21,60 @@ class ReadingForm extends React.Component {
       garage: '',
       living: '',
       kitchen: '',
-      guest: '', 
+      guest: '',
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.prev = this.prev.bind(this);
+    this.next = this.next.bind(this);
   }
 
-  handleChange = event => {
-    const {name, value} = event.target
+  handleChange(event) {
+    const { name, value } = event.target;
     this.setState({
-      [name]: value
-    })    
+      [name]: value,
+    });
   }
-   
-  handleSubmit = event => {
-    event.preventDefault()
-    const { bedroom, study, garage, living, kitchen, guest } = this.state
-    alert(`Your registration detail: \n 
-           Bedroom: ${bedroom}\n 
-           Study: ${study} \n
-           Garage: ${garage} \n
-           Living: ${living} \n
-           Kitchen: ${kitchen} \n
-           Guest: ${guest}`)
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const {
+      bedroom, study, garage, living, kitchen, guest,
+    } = this.state;
+    const consumption = Number(bedroom)
+    + Number(study)
+    + Number(garage)
+    + Number(living)
+    + Number(kitchen)
+    + Number(guest);
+    const available = (1800 / 30) - consumption;
+    const saved = Math.floor(100 - (100 * (consumption / (1800 / 30))));
+    axios.post('/api/readings', {
+      bedroom, study, garage, living, kitchen, guest, consumption, available, saved,
+    })
+      .then((response) => response.data)
+      .then((response) => {
+        if (response.code === 400) {
+          this.setState({
+            errors: response.errors,
+          });
+        } else if (response.code === 200) {
+          this.setState({
+            bedroom: '',
+            study: '',
+            garage: '',
+            living: '',
+            kitchen: '',
+            consumption: '',
+            available: '',
+            saved: '',
+          });
+        }
+      });
   }
-  
-  _next = () => {
-    let currentStep = this.state.currentStep
+
+  next() {
+    let { currentStep } = this.state;
     switch (currentStep) {
       case 2:
         currentStep = 3;
@@ -54,90 +86,91 @@ class ReadingForm extends React.Component {
         currentStep = 5;
         break;
       case 5:
-        currentStep =6
+        currentStep = 6;
         break;
       default:
         currentStep += 1;
     }
 
     this.setState({
-      currentStep: currentStep
-    })
+      currentStep,
+    });
   }
-    
-  _prev = () => {
-    let currentStep = this.state.currentStep
-    currentStep = currentStep <= 1? 1: currentStep - 1
+
+  prev() {
+    let { currentStep } = this.state;
+    currentStep = currentStep <= 1 ? 1 : currentStep - 1;
     this.setState({
-      currentStep: currentStep
-    })
+      currentStep,
+    });
   }
 
   /*
   * the functions for our button
   */
   previousButton() {
-    let currentStep = this.state.currentStep;
-    if(currentStep !== 1){
+    const { currentStep } = this.state;
+    if (currentStep !== 1) {
       return (
-        <button 
-          type="button" 
-          id="prevBtn" 
-          onClick={this._prev}>
-        Previous
+        <button
+          type="button"
+          id="prevBtn"
+          onClick={this.prev}
+        >
+          Previous
         </button>
-      )
+      );
     }
     return null;
   }
 
-  nextButton(){
-    let currentStep = this.state.currentStep;
-    if(currentStep < 6){
+  nextButton() {
+    const { currentStep } = this.state;
+    if (currentStep < 6) {
       return (
-        <button 
+        <button
           type="button"
           id="nextBtn"
-          onClick={this._next}>
-        Next
-        </button>        
-      )
+          onClick={this.next}
+        >
+          Next
+        </button>
+      );
     }
     return null;
   }
 
   render() {
-    let { num } = this.props
     return (
-      <React.Fragment>
+      <>
         <form id="regForm" onSubmit={this.handleSubmit}>
           <Bedroom
-            currentStep={this.state.currentStep} 
+            currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             bedroom={this.state.bedroom}
           />
-          <Study 
-            currentStep={this.state.currentStep} 
+          <Study
+            currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             study={this.state.study}
           />
           <Garage
-            currentStep={this.state.currentStep} 
+            currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             garage={this.state.garage}
           />
-          <Living 
-            currentStep={this.state.currentStep} 
+          <Living
+            currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             living={this.state.living}
           />
-          <Kitchen 
-            currentStep={this.state.currentStep} 
+          <Kitchen
+            currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             kitchen={this.state.kitchen}
           />
           <Guest
-            currentStep={this.state.currentStep} 
+            currentStep={this.state.currentStep}
             handleChange={this.handleChange}
             guest={this.state.guest}
           />
@@ -146,9 +179,9 @@ class ReadingForm extends React.Component {
             {this.nextButton()}
           </div>
         </form>
-      </React.Fragment>
+      </>
     );
   }
-} 
+}
 
 export default ReadingForm;

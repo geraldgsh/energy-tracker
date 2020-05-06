@@ -5,7 +5,6 @@ AllCops:
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
-    - "Gemfile"
     - "README.md"
     - "node_modules/**/*"
 
