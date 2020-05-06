@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import axios from 'axios';
 import {
@@ -27,14 +26,14 @@ class ReadingForm extends React.Component {
   }
 
   handleChange(event) {
-    const {name, value} = event.target;
+    const {name, value} = event.target
     this.setState({
-      [name]: value,
-    })
+      [name]: value
+    })    
   }
-
+   
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
     let { bedroom, study, garage, living, kitchen, guest } = this.state
     let consumption = Number(bedroom) + Number(study) + Number(garage) + Number(living) + Number(kitchen) + Number(guest)
     let available = (1800/30) - consumption
@@ -75,7 +74,7 @@ class ReadingForm extends React.Component {
   Saved: ${saved} %`)
   }
   
-  _next() {
+  next = () => {
     let currentStep = this.state.currentStep
     switch (currentStep) {
       case 2:
@@ -99,11 +98,10 @@ class ReadingForm extends React.Component {
     })
   }
     
-  _prev() {
+  _prev = () => {
     let currentStep = this.state.currentStep
     currentStep = currentStep <= 1? 1: currentStep - 1
     this.setState({
-      // eslint-disable-next-line object-shorthand
       currentStep: currentStep
     })
   }
@@ -133,7 +131,7 @@ class ReadingForm extends React.Component {
         <button 
           type="button"
           id="nextBtn"
-          onClick={this._next}>
+          onClick={this.next}>
         Next
         </button>        
       )
