@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/*path' => 'homepage#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   scope "/api" do
-    resources :users, only: [:create]
+    resources :users, only: %i[create]
     resources :readings, only: %i[create destroy index show]
     scope :users do
       resources :sessions,only: [:create],module: :users

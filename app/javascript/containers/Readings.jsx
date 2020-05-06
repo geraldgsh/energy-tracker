@@ -6,5 +6,5 @@ export default () => (
   <div>
     <Head />
     <Navbar />
-  </div>  
+  </div>
 );

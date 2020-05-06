@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable camelcase */
 import React from 'react';
-import axios from "axios"
+import axios from 'axios';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -12,45 +14,49 @@ class Signup extends React.Component {
       units: '',
       target: '',
       errors: {},
-    }
+    };
   }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const {
+      name, email, password, password_confirmation, units, target,
+    } = this.state;
+    axios.post('/api/users', {
+      name, email, password, password_confirmation, units, target,
+    })
+      .then((response) => response.data)
+      .then((response) => {
+        if (response.code === 400) {
+          this.setState({
+            errors: response.errors,
+          });
+        } else if (response.code === 200) {
+          this.setState({
+            name: '',
+            email: '',
+            password: '',
+            password_confirmation: '',
+            units: '',
+            target: '',
+            errors: {},
+          });
+        }
+      });
+  }
+
   handleChange(e) {
     this.setState(
       {
-        [e.target.id]: e.target.value
-      }
-    )
+        [e.target.id]: e.target.value,
+      },
+    );
   }
-  onSubmit(e) {
-    e.preventDefault();
-    let { name, email, password, password_confirmation, units, target } = this.state;
-    
-    axios.post("/api/users", {      
-        name, email, password, password_confirmation, units, target,      
-    })
-      .then(response => response.data)
-      .then(response => {
-        if (response.code == 400) {
-          console.log(response);
-          this.setState({
-            errors: response.errors,
-          })
-        } else if (response.code == 200) {
-          this.setState({
-            name: "",
-            email: "",
-            password: "",
-            password_confirmation: '',
-            units: "",
-            target: "",
-            errors: {},
-          })
-        }
-      }
-    )
-  }
+
   render() {
-    let { name, email, password, password_confirmation, units, target } = this.state;
+    const {
+      name, email, password, password_confirmation, units, target,
+    } = this.state;
     return (
       <div className="tab-content">
         <div id="new">
@@ -60,60 +66,60 @@ class Signup extends React.Component {
               <div className="right-inner-addon">
                 <i className="fa fa-user" />
                 <input
-                  className="form-control input-lg" 
-                  placeholder="Name" 
-                  type="text" 
+                  className="form-control input-lg"
+                  placeholder="Name"
+                  type="text"
                   id="name"
                   value={name}
-                  onChange={e => this.handleChange(e)}
+                  onChange={(e) => this.handleChange(e)}
                 />
               </div>
             </div>
             <div className="form-group">
               <div className="right-inner-addon">
                 <i className="fa fa-envelope" />
-                <input 
-                  className="form-control input-lg" 
-                  placeholder="Email" 
+                <input
+                  className="form-control input-lg"
+                  placeholder="Email"
                   type="text"
-                  id="email" 
+                  id="email"
                   value={email}
-                  onChange={e => this.handleChange(e)}
+                  onChange={(e) => this.handleChange(e)}
                 />
               </div>
             </div>
             <div className="form-group">
               <div className="right-inner-addon">
                 <i className="fa fa-key" />
-                <input 
-                  className="form-control input-lg" 
-                  placeholder="Password" 
+                <input
+                  className="form-control input-lg"
+                  placeholder="Password"
                   type="password"
                   id="password"
                   value={password}
-                  onChange={e => this.handleChange(e)}
+                  onChange={(e) => this.handleChange(e)}
                 />
               </div>
             </div>
             <div className="form-group">
               <div className="right-inner-addon">
                 <i className="fa fa-key" />
-                <input 
-                  className="form-control input-lg" 
-                  placeholder="Password Confirmation" 
+                <input
+                  className="form-control input-lg"
+                  placeholder="Password Confirmation"
                   type="password"
                   id="password_confirmation"
                   value={password_confirmation}
-                  onChange={e => this.handleChange(e)}
+                  onChange={(e) => this.handleChange(e)}
                 />
               </div>
             </div>
             <div className="form-group">
-              <select 
+              <select
                 className="custom-select custom-select-md"
                 id="units"
                 value={units}
-                onChange={e => this.handleChange(e)}
+                onChange={(e) => this.handleChange(e)}
               >
                 <option>Choose monthly units</option>
                 <option value="1800">1800</option>
@@ -124,11 +130,11 @@ class Signup extends React.Component {
               </select>
             </div>
             <div className="form-group">
-              <select 
+              <select
                 className="custom-select custom-select-md"
                 id="target"
                 value={target}
-                onChange={e => this.handleChange(e)}
+                onChange={(e) => this.handleChange(e)}
               >
                 <option>Choose month target savings</option>
                 <option value="5">5%</option>
@@ -142,8 +148,8 @@ class Signup extends React.Component {
           <hr />
           <div className="tab-content">
             <div className="tab-pane active text-center" id="pp">
-              <button 
-                className="btn btn-primary btn-lg btn-block" 
+              <button
+                className="btn btn-primary btn-lg btn-block"
                 type="submit"
                 onClick={(e) => this.onSubmit(e)}
               >
@@ -153,9 +159,9 @@ class Signup extends React.Component {
               </button>
             </div>
           </div>
-        </div>           
+        </div>
       </div>
-    )
+    );
   }
 }
 

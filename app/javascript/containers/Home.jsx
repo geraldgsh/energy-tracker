@@ -29,7 +29,7 @@ class Home extends React.Component {
   render() {
     const sector = this.state.section;
     return (
-      <div>   
+      <div>
         <Head />
         <div className="container text-content sign-in-up">
           <div className="row justify-content-center">
@@ -37,37 +37,37 @@ class Home extends React.Component {
               <br />
               {/* Nav tabs */}
               <div className="text-center">
-                  <div className="btn-group">
-                    <button 
-                      type="button" 
-                      value="Signup"
-                      className="big btn btn-primary"
-                      onClick={e => this.handleClick(e, 'value')}
-                    >
-                      <i className="fa fa-plus" />
-                      {' '}
-                      Create Account
-                    </button>
-                    <button
-                      type="button"
-                      value="Signin"
-                      className="big btn btn-success"
-                      onClick={e => this.handleClick(e, 'value')}
-                    >
-                      <i className="fa fa-user" />
-                      {' '}
-                      Login
-                    </button>
-                  </div>
+                <div className="btn-group">
+                  <button
+                    type="button"
+                    value="Signup"
+                    className="big btn btn-primary"
+                    onClick={(e) => this.handleClick(e, 'value')}
+                  >
+                    <i className="fa fa-plus" />
+                    {' '}
+                    Create Account
+                  </button>
+                  <button
+                    type="button"
+                    value="Signin"
+                    className="big btn btn-success"
+                    onClick={(e) => this.handleClick(e, 'value')}
+                  >
+                    <i className="fa fa-user" />
+                    {' '}
+                    Login
+                  </button>
                 </div>
-                <p className="click2select">Tap to select</p>
-                {sector}                
+              </div>
+              <p className="click2select">Tap to select</p>
+              {sector}
             </div>
           </div>
-        </div>        
+        </div>
       </div>
-    )   
-  } 
+    );
+  }
 }
 
 export default Home;

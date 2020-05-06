@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from '../components/Head';
-import DayStats from '../components/reading/DayStats'
+import DayStats from '../components/reading/DayStats';
 import Navbar from '../components/Navbar';
 
 export default () => (
@@ -8,5 +8,5 @@ export default () => (
     <Head />
     <DayStats />
     <Navbar />
-  </div>  
+  </div>
 );

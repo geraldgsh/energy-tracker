@@ -1,21 +1,24 @@
+/* eslint-disable react/destructuring-assignment, react/button-has-type */
 import React from 'react';
-import InputGraph from '../graph/InputGraph'
+import PropTypes from 'prop-types';
+import InputGraph from '../graph/InputGraph';
 
 export function Bedroom(props) {
   if (props.currentStep !== 1) {
-    return null
-  } 
-  return(
-    <React.Fragment>
+    return null;
+  }
+
+  return (
+    <>
       <div className="row justify-content-center reading-header">
         <h4>Take your Bedroom Reading</h4>
       </div>
-      <div className="row justify-content-center">        
+      <div className="row justify-content-center">
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.bedroom} />
-        </div>       
+        </div>
       </div>
-      <div className="row justify-content-center reading-input">      
+      <div className="row justify-content-center reading-input">
         <input
           className="form-control"
           id="bedroom"
@@ -24,27 +27,33 @@ export function Bedroom(props) {
           placeholder="Enter bedroom reading"
           value={props.bedroom}
           onChange={props.handleChange}
-        />      
+        />
       </div>
-    </React.Fragment>    
+    </>
   );
 }
 
+Bedroom.propTypes = {
+  bedroom: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  currentStep: PropTypes.number.isRequired,
+};
+
 export function Study(props) {
   if (props.currentStep !== 2) {
-    return null
-  } 
-  return(
-    <React.Fragment>
+    return null;
+  }
+  return (
+    <>
       <div className="row justify-content-center reading-header">
         <h4>Take your Study room Reading</h4>
-      </div>         
-      <div className="row justify-content-center">        
+      </div>
+      <div className="row justify-content-center">
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.study} />
-        </div>       
+        </div>
       </div>
-      <div className="row justify-content-center reading-input">      
+      <div className="row justify-content-center reading-input">
         <input
           className="form-control"
           id="study"
@@ -53,27 +62,33 @@ export function Study(props) {
           placeholder="Enter study reading"
           value={props.study}
           onChange={props.handleChange}
-        />      
+        />
       </div>
-    </React.Fragment>  
+    </>
   );
 }
 
+Study.propTypes = {
+  study: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  currentStep: PropTypes.number.isRequired,
+};
+
 export function Garage(props) {
   if (props.currentStep !== 3) {
-    return null
-  } 
-  return(
-    <React.Fragment>
+    return null;
+  }
+  return (
+    <>
       <div className="row justify-content-center reading-header">
         <h4>Take your Garage Reading</h4>
-      </div>         
+      </div>
       <div className="row justify-content-center">
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.garage} />
-        </div>       
+        </div>
       </div>
-      <div className="row justify-content-center reading-input">      
+      <div className="row justify-content-center reading-input">
         <input
           className="form-control"
           id="garage"
@@ -82,27 +97,33 @@ export function Garage(props) {
           placeholder="Enter garage reading"
           value={props.garage}
           onChange={props.handleChange}
-        />      
+        />
       </div>
-    </React.Fragment>    
+    </>
   );
 }
 
+Garage.propTypes = {
+  garage: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  currentStep: PropTypes.number.isRequired,
+};
+
 export function Living(props) {
   if (props.currentStep !== 4) {
-    return null
-  } 
-  return(
-    <React.Fragment>
+    return null;
+  }
+  return (
+    <>
       <div className="row justify-content-center reading-header">
         <h4>Take your Living Room Reading</h4>
-      </div>         
+      </div>
       <div className="row justify-content-center">
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.living} />
-        </div>       
+        </div>
       </div>
-      <div className="row justify-content-center reading-input">      
+      <div className="row justify-content-center reading-input">
         <input
           className="form-control"
           id="living"
@@ -111,27 +132,33 @@ export function Living(props) {
           placeholder="Enter living reading"
           value={props.living}
           onChange={props.handleChange}
-        />      
+        />
       </div>
-    </React.Fragment>  
+    </>
   );
 }
 
+Living.propTypes = {
+  living: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  currentStep: PropTypes.number.isRequired,
+};
+
 export function Kitchen(props) {
   if (props.currentStep !== 5) {
-    return null
-  } 
-  return(
-    <React.Fragment>
+    return null;
+  }
+  return (
+    <>
       <div className="row justify-content-center reading-header">
         <h4>Take your Kitchen Reading</h4>
-      </div>         
+      </div>
       <div className="row justify-content-center">
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.kitchen} />
-        </div>       
+        </div>
       </div>
-      <div className="row justify-content-center reading-input">      
+      <div className="row justify-content-center reading-input">
         <input
           className="form-control"
           id="kitchen"
@@ -140,27 +167,33 @@ export function Kitchen(props) {
           placeholder="Enter kitchen reading"
           value={props.kitchen}
           onChange={props.handleChange}
-        />      
+        />
       </div>
-    </React.Fragment>    
+    </>
   );
 }
 
+Kitchen.propTypes = {
+  kitchen: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  currentStep: PropTypes.number.isRequired,
+};
+
 export function Guest(props) {
   if (props.currentStep !== 6) {
-    return null
-  } 
-  return(
-    <React.Fragment>
+    return null;
+  }
+  return (
+    <>
       <div className="row justify-content-center reading-header">
         <h4>Take your Guest Room Reading</h4>
       </div>
       <div className="row justify-content-center">
         <div className="graph-content">
           <InputGraph strokeWidth={2} percentage={props.guest} />
-        </div>       
+        </div>
       </div>
-      <div className="row justify-content-center reading-input">      
+      <div className="row justify-content-center reading-input">
         <input
           className="form-control"
           id="guest"
@@ -169,9 +202,15 @@ export function Guest(props) {
           placeholder="Enter guest reading"
           value={props.guest}
           onChange={props.handleChange}
-        />      
+        />
       </div>
-    <button className="btn btn-success btn-block">Submit</button>
-    </React.Fragment>
+      <button className="btn btn-success btn-block">Submit</button>
+    </>
   );
 }
+
+Guest.propTypes = {
+  guest: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  currentStep: PropTypes.number.isRequired,
+};

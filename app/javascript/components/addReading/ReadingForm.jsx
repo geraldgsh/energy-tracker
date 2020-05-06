@@ -1,5 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
-import axios from "axios";
+import axios from 'axios';
 import {
   Bedroom,
   Study,
@@ -7,7 +8,7 @@ import {
   Living,
   Kitchen,
   Guest,
-} from './Rooms'
+} from './Rooms';
 
 class ReadingForm extends React.Component {
   constructor(props) {
@@ -21,17 +22,19 @@ class ReadingForm extends React.Component {
       kitchen: '',
       guest: '',
     };
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange = event => {
-    const {name, value} = event.target
+  handleChange(event) {
+    const {name, value} = event.target;
     this.setState({
-      [name]: value
-    })    
+      [name]: value,
+    })
   }
-   
-  handleSubmit = event => {
-    event.preventDefault()
+
+  handleSubmit(event) {
+    event.preventDefault();
     let { bedroom, study, garage, living, kitchen, guest } = this.state
     let consumption = Number(bedroom) + Number(study) + Number(garage) + Number(living) + Number(kitchen) + Number(guest)
     let available = (1800/30) - consumption
@@ -72,7 +75,7 @@ class ReadingForm extends React.Component {
   Saved: ${saved} %`)
   }
   
-  _next = () => {
+  _next() {
     let currentStep = this.state.currentStep
     switch (currentStep) {
       case 2:
@@ -96,10 +99,11 @@ class ReadingForm extends React.Component {
     })
   }
     
-  _prev = () => {
+  _prev() {
     let currentStep = this.state.currentStep
     currentStep = currentStep <= 1? 1: currentStep - 1
     this.setState({
+      // eslint-disable-next-line object-shorthand
       currentStep: currentStep
     })
   }
@@ -138,7 +142,6 @@ class ReadingForm extends React.Component {
   }
 
   render() {
-    let { num } = this.props
     return (
       <React.Fragment>
         <form id="regForm" onSubmit={this.handleSubmit}>

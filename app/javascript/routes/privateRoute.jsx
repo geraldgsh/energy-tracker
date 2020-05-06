@@ -1,27 +1,26 @@
-import React, { Component } from "react"
-import { Route, Redirect } from "react-router-dom"
-import {connect}from "react-redux"
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-class PrivateRoute extends Component {
-
+const PrivateRoute = () => {
   render() {
-    let { path, component, login } = this.props
-    if(!login){
-      return <Redirect to="/"/>
+    const { path, component, login } = this.props;
+    if (!login) {
+      return <Redirect to="/" />;
     }
     return (
       <Route
         path={path}
         component={component}
       />
+    );
+  }
+}
 
-    )
-  }
-}
-const mapStateToProps=(state)=>{
-  let {login}=state
+const mapStateToProps = (state) => {
+  const { login } = state;
   return {
-    login
-  }
-}
-export default connect(mapStateToProps,null)(PrivateRoute);
+    login,
+  };
+};
+export default connect(mapStateToProps, null)(PrivateRoute);

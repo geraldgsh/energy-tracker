@@ -1,11 +1,7 @@
-const SIGNEDIN = (name) => {
-  return {
-    type: "SIGNEDIN",
-    name
-  }
-}
-const SIGNEDOUT = () => {
-  return { type: "SIGNEDOUT" }
-}
+const SIGNEDIN = (name) => ({
+  type: 'SIGNEDIN',
+  name,
+});
+const SIGNEDOUT = () => ({ type: 'SIGNEDOUT' });
 
 export { SIGNEDIN, SIGNEDOUT };
