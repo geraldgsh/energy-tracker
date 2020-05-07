@@ -49,7 +49,7 @@ class ReadingForm extends React.Component {
     + Number(guest);
     const available = (1800 / 30) - consumption;
     const saved = Math.floor(100 - (100 * (consumption / (1800 / 30))));
-    axios.post('/api/readings', {
+    axios.post('/api/v1/readings', {
       bedroom, study, garage, living, kitchen, guest, consumption, available, saved,
     })
       .then((response) => response.data)
