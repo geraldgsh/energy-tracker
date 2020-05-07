@@ -9,7 +9,7 @@ import { SIGNEDOUT } from '../../actions';
 export class SignoutBtn extends Component {
   onSubmit(e) {
     e.preventDefault();
-    axios.delete('/api/users/sessions')
+    axios.delete('/api/v1/users/sessions')
       .then(() => this.props.logout());
   }
 

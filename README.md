@@ -32,6 +32,8 @@ E-Leaf have just released an open tender for a tracking mobile app. The tender c
 6. User can seamlessly select and view individual day readings.
 7. App must be responsive, on both tablet and desktop versions, following given design guidelines.
 8. App have summary of readings by month with charts and graphs.
+9. During sign up, users must input month purchased units (i.e. 1800, 2100, 2400, 2700, 3000).
+10. During signup, users must input percentage of target savings (i.e. 5%, 10%, 15%, 20%, 25%).
 
 ### Tools
 
