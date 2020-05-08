@@ -20,7 +20,7 @@ const DayStats = () => {
               <Circle>
                 <CircularProgressbar
                   value={percentage}
-                  text={`${percentage}%`}
+                  text={`${percentage}Units`}
                   strokeWidth={5}
                   styles={buildStyles({
                     textColor: '#4b627a',
@@ -37,7 +37,7 @@ const DayStats = () => {
               <Circle>
                 <CircularProgressbar
                   value={percentage}
-                  text={`${percentage} Units`}
+                  text={`${percentage}Units`}
                   strokeWidth={5}
                   styles={buildStyles({
                     textColor: '#4b627a',
@@ -54,7 +54,7 @@ const DayStats = () => {
               <Circle>
                 <CircularProgressbar
                   value={percentage}
-                  text={`${percentage} Units`}
+                  text={`${percentage}%`}
                   strokeWidth={5}
                   styles={buildStyles({
                     textColor: '#4b627a',

@@ -5,6 +5,7 @@ $blue: #42B5E8;
 $gray: #acafb4;
 $green: #22C65B;
 $grey: #313944;
+$textGray: #576d83;
 $lighter-gray: #f3f4f6;
 
 body {
@@ -202,8 +203,13 @@ input {
   min-width: 300px;
 }
 
-.circular-dimension {
-  max-width: 40%;
+.circular-box {  
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  .circular-dimension {
+    max-width: 40%;
+  } 
 }
 
 .graph-box {
@@ -214,12 +220,6 @@ input {
       max-width: 100%;
     }
   }
-}
-
-.circular-box {  
-  display: flex;
-  justify-content: center;
-  margin-top: 30px; 
 }
 
 .room-card {  
@@ -236,13 +236,80 @@ input {
   }  
 }
 
+.readlist {
+  background-color: #f3f4f6;
+  height: 100vh;
+  margin: auto;
+  margin-top: 35px;
+  margin-bottom: 2em;
+  padding: 0 0 40px 0;
+  width: 70%;
+  min-width: 300px;
+}
+
+.list {
+  background-color: white;
+  margin: 10px 0 0 0 !important;
+  height: 50px;
+  text-align: center;
+  h4 {
+    margin: auto;
+    padding: auto;
+  }
+}
+
+.circular-list {
+  width: 40px;
+}
+
+.circular-boxlist {
+  float: right;
+  display: block;
+}
+
+.date-list {
+  color: $textGray;
+  font-weight: bold;
+}
+
+.saving-list {
+  color: $textGray;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.graph {
+  padding: 4px 0 4px 0;
+}
+
+.graph-valuebox {
+  padding: 10px 0 10px 0;
+  .graph-value {
+    color: $textGray;
+    font-size: 20px;
+    font-weight: bolder;
+    justify-content: center;
+    .read-units {
+      color: $textGray;
+      font-size: 10px;
+      font-weight: bold;
+      padding-top: 13px;
+    }
+    .read-sym {
+      color: $gray;
+      padding: 0 10px 0 5px;
+    }
+  }
+}
+
 @media screen and (max-width: 720px) {
   #regForm,
-  .daily-stats {
+  .daily-stats,
+  .readlist {
     width: 100%;
   }
   .circular-dimension {
-    width: 100%;
+    width: 135px;
   }
   .room-card {
     .row {
@@ -252,5 +319,8 @@ input {
         }
       }
     }
+  }
+  .graph {
+    padding-right: 0 !important;
   }
 }
