@@ -8,6 +8,7 @@ class Api::V1::Users::SessionsController < ApplicationController
       render json: {
         code: 200,
         user: {
+          id: @user.id,
           name: @user.name
         }
       }

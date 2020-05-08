@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -11,7 +12,8 @@ import reducer from '../reducer/sessions';
 
 
 const store = createStore(
-  reducer, compose(persistState()),
+  reducer, compose(persistState(),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()),
 );
 
 export default (

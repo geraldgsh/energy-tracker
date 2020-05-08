@@ -30,9 +30,9 @@ export class SignoutBtn extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  const { login, name } = state;
+  const { login, id, name } = state;
   return {
-    login, name,
+    login, id, name,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
