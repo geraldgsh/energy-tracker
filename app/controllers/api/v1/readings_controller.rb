@@ -1,7 +1,7 @@
 class Api::V1::ReadingsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :logged_in?
-  
+
   def index
     @reading = Reading.all
     if @reading
