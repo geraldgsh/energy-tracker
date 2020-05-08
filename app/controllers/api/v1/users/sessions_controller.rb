@@ -1,5 +1,5 @@
-class Users::SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: %i[create destroy]
+class Api::V1::Users::SessionsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def create
     @user = User.find_by(email: params[:user][:email])
@@ -8,6 +8,7 @@ class Users::SessionsController < ApplicationController
       render json: {
         code: 200,
         user: {
+          id: @user.id,
           name: @user.name
         }
       }

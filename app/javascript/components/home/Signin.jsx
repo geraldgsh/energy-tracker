@@ -22,7 +22,7 @@ class Signin extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     const { email, password } = this.state;
-    axios.post('/api/users/sessions', {
+    axios.post('/api/v1/users/sessions', {
       user: {
         email,
         password,
@@ -31,8 +31,9 @@ class Signin extends React.Component {
       .then((response) => response.data)
       .then((response) => {
         if (response.code === 200) {
-          this.props.login(response.user.name);
-          this.props.history.push('/readings');
+          console.log(response);
+          this.props.login(response.user.id, response.user.name);
+          this.props.history.push('/addreading');
         } else if (response.code === 400) {
           this.setState({
             errors: response.errors,
@@ -101,8 +102,8 @@ class Signin extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  login: ((name) => {
-    dispatch(SIGNEDIN(name));
+  login: ((id, name) => {
+    dispatch(SIGNEDIN(id, name));
   }),
 });
 

@@ -9,7 +9,7 @@ import { SIGNEDOUT } from '../../actions';
 export class SignoutBtn extends Component {
   onSubmit(e) {
     e.preventDefault();
-    axios.delete('/api/users/sessions')
+    axios.delete('/api/v1/users/sessions')
       .then(() => this.props.logout());
   }
 
@@ -30,9 +30,9 @@ export class SignoutBtn extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  const { login, name } = state;
+  const { login, id, name } = state;
   return {
-    login, name,
+    login, id, name,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
