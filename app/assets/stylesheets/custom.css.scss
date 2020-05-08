@@ -296,10 +296,14 @@ input {
       padding-top: 13px;
     }
     .read-sym {
-      color: $gray;
+      color: $textGray;
       padding: 0 10px 0 5px;
     }
   }
+}
+
+.fa-angle-right::before {
+  color: $textGray;
 }
 
 @media screen and (max-width: 720px) {

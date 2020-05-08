@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
@@ -6,7 +7,7 @@ import {
   buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Circle from '../graph/ReadGraph';
 
 
@@ -28,7 +29,6 @@ class ReadingList extends React.Component {
           this.setState({
             readings: response.data,
           });
-          console.log(response.data);
         } else if (response.code === 401) {
           this.setState({
             errors: response.errors,
@@ -71,7 +71,11 @@ class ReadingList extends React.Component {
             {reading.available}
             <span className="read-units">Units</span>
             <br />
-            <span className="read-sym"><i className="fas fa-angle-right" /></span>
+            <span className="read-sym">
+              <Link to={`/api/v1/user/${reading.user_id}/reading/${reading.id}`}>
+                <i className="fas fa-angle-right" />
+              </Link>
+            </span>
           </div>
         </div>
       </div>
