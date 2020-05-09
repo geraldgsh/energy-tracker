@@ -1,8 +1,8 @@
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/forbid-prop-types, react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from '../components/Head';
-import DailyStats from '../components/reading/DayStats';
+import DayStats from '../components/reading/DayStats';
 import Navbar from '../components/Navbar';
 
 class Reading extends React.Component {
@@ -12,10 +12,10 @@ class Reading extends React.Component {
         params: { userId, id },
       },
     } = this.props;
-    console.log(userId, id);
     return (
       <div>
         <Head />
+        <DayStats userId={userId} id={id} />
         <Navbar />
       </div>
     );
@@ -23,7 +23,7 @@ class Reading extends React.Component {
 }
 
 Reading.propTypes = {
-  match: PropTypes.bool.isRequired,
+  match: PropTypes.object.isRequired,
 };
 
 export default Reading;
