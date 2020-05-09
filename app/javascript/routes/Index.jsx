@@ -6,8 +6,8 @@ import { compose, createStore } from 'redux';
 import persistState from 'redux-localstorage';
 import Home from '../containers/Home';
 import Readings from '../containers/Readings';
-import AddReading from '../containers/AddReading';
 import Reading from '../containers/Reading';
+import AddReading from '../containers/AddReading';
 import reducer from '../reducer/sessions';
 
 
@@ -23,7 +23,7 @@ export default (
         <Route exact path="/" component={Home} />
         <Route path="/addreading" component={AddReading} />
         <Route path="/readings" component={Readings} />
-        <Route path="/reading" component={Reading} />
+        <Route path="/user/:userId/reading/:id" component={Reading} />
       </Switch>
     </Router>
   </Provider>

@@ -72,7 +72,7 @@ class ReadingList extends React.Component {
             <span className="read-units">Units</span>
             <br />
             <span className="read-sym">
-              <Link to={`/api/v1/user/${reading.user_id}/reading/${reading.id}`}>
+              <Link to={`/user/${reading.user_id}/reading/${reading.id}`}>
                 <i className="fas fa-angle-right" />
               </Link>
             </span>
