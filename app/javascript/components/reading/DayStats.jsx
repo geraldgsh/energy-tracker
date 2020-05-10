@@ -29,22 +29,24 @@ export class DailyStats extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { userId, id } = this.props;
     const { units } = this.state;
-    axios.get(`/api/v1/user/${userId}/reading/${id}`, { units })
-      .then((response) => response.data)
-      .then((response) => {
-        if (response.code === 200) {
-          this.setState({
-            reading: response.data,
-          });
-        } else if (response.code === 401) {
-          this.setState({
-            errors: response.errors,
-          });
-        }
-      });
+    try {
+      const [userData, readingData] = await axios.all([
+        axios.get(`/api/v1/users/${userId}`, { units }),
+        axios.get(`/api/v1/user/${userId}/reading/${id}`, { units }),
+      ]);
+      console.log(userData.data);
+      if (userData.data.code === 200 && userData.data.code === 200) {
+        this.setState({
+          reading: readingData.data.data,
+          user: userData.data.data,
+        });
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
   }
 
   render() {
