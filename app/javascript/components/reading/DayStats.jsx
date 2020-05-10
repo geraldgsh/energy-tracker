@@ -94,7 +94,7 @@ export class DailyStats extends React.Component {
                   </Circle>
                   <div className="text-center">
                     <h6>Available</h6>
-                    <h6>Units left</h6>
+                    <h6>Units Left</h6>
                   </div>
                 </div>
                 <div className="col">
