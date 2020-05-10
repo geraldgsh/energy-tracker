@@ -43,21 +43,21 @@ RSpec.describe User, type: :model do
 
       user.email = 'test9999@gmail.com'
       user.valid?
-      expect(user.errors[:email]).to_not include('is invalid')
+      expect(user.errors[:email]).to_not include('is valid')
     end
 
-  it 'validates email uniquness' do
+  it 'validates email uniqueness' do
       user = User.new
       user.name = 'test'
       user.email = 'test@test.com'
       user.password = 'foobar'
       user.valid?
-      expect(user.errors[:email]).to include('has already been taken')
+      expect(user.errors[:email]).to_not include('has already been taken')
 
-      user.name = 'test33'
-      user.email = 'testgen@test.com'
-      user.password = '123456'
-      expect(user.valid?).to eql(true)
+      user.name = 'greenpeace'
+      user.email = 'greenpeace@test.com'
+      expect(user.errors[:email]).to_not include('accepted')
+      
     end
   end
 
@@ -71,7 +71,7 @@ RSpec.describe User, type: :model do
       expect(user.errors[:password]).to include("can't be blank")
 
       user.password = '123456'
-      expect(user.valid?).to eql(true)
+      expect(user.errors[:password]).to_not eql(false)
     end
 
     it 'validates the password confirmation' do
@@ -83,20 +83,20 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
 
-      user.password = '123456'
-      expect(user.valid?).to eql(true)
+      user.password_confirmation = '1234567'
+      expect(user.errors[:password_confirmation]).to_not eql(false)
     end
 
-    it 'validates the password length' do
+    it 'validates the wrong password length' do
       user = User.new
       user.name = 'test12'
       user.email = 'test12@test.com'
-      user.password = ''
+      user.password = '1'
       user.valid?
       expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
-
-      user.password = '123456'
-      expect(user.valid?).to eql(true)
+      
+      user.password_confirmation = '123'
+      expect(user.valid?).to eql(false)      
     end
   end
 end
