@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    User.create(name: 'test', email: 'test@test.com', password: "foobar", password_confirmation: "foobar")
+    User.create(name: 'test', email: 'test@test.com', password: 'foobar', password_confirmation: 'foobar')
   end
 
   describe '#name' do
     before :each do
-      User.create(name: 'test', email: 'test@test.com', password: "foobar", password_confirmation: "foobar")
+      User.create(name: 'test', email: 'test@test.com', password: 'foobar', password_confirmation: 'foobar')
     end
     it 'doesnt take user without the name' do
       user = User.new
@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
       expect(user.errors[:email]).to_not include('is valid')
     end
 
-  it 'validates email uniqueness' do
+    it 'validates email uniqueness' do
       user = User.new
       user.name = 'test'
       user.email = 'test@test.com'
@@ -57,7 +57,6 @@ RSpec.describe User, type: :model do
       user.name = 'greenpeace'
       user.email = 'greenpeace@test.com'
       expect(user.errors[:email]).to_not include('accepted')
-      
     end
   end
 
@@ -93,10 +92,10 @@ RSpec.describe User, type: :model do
       user.email = 'test12@test.com'
       user.password = '1'
       user.valid?
-      expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
-      
+      expect(user.errors[:password]).to include('is too short (minimum is 6 characters)')
+
       user.password_confirmation = '123'
-      expect(user.valid?).to eql(false)      
+      expect(user.valid?).to eql(false)
     end
   end
 end
