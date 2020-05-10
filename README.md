@@ -56,8 +56,15 @@ Instructions [here](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-1-
 
 ### Future Features
 
-1. 
-2. 
+1. Facebook, Google and Microsoft OAuth
+2. Available units graph turn red at low levels
+3. Option to name and select number of rooms during registration
+4. Use slider bar for unit input
+5. Set up DB seed for 30 days for each users with randomized units
+6. Input validation; next button do not work if users do not key in an input
+7. Specific navbar button stays highlighted for each respective feature view
+8. Add user profile page
+9. Users can delete own reading entry 
 
 ### To begin
 
@@ -67,6 +74,18 @@ Instructions [here](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-1-
 4. Run 'rails db:migrate' to initialize
 5. Type `rails server` in terminal within root project folder.
 6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### To Test
+
+Run the following command terminal for root folder
+
+```
+$ bundle exec rspec spec/models
+.......
+
+Finished in 0.26756 seconds (files took 2.63 seconds to load)
+7 examples, 0 failures
+```
 
 ### Wiki
 
