@@ -1,7 +1,5 @@
-/* eslint-disable react/no-unused-state */
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
 import axios from 'axios';
 import moment from 'moment';
 import {
@@ -26,6 +24,9 @@ export class DailyStats extends React.Component {
           available: '',
           consumption: '',
         },
+      user: {
+        units: '',
+      },
     };
   }
 
@@ -37,7 +38,6 @@ export class DailyStats extends React.Component {
         axios.get(`/api/v1/users/${userId}`, { units }),
         axios.get(`/api/v1/user/${userId}/reading/${id}`, { units }),
       ]);
-      console.log(userData.data);
       if (userData.data.code === 200 && userData.data.code === 200) {
         this.setState({
           reading: readingData.data.data,
@@ -45,13 +45,15 @@ export class DailyStats extends React.Component {
         });
       }
     } catch (err) {
-      console.log(err.message);
+      throw err.message;
     }
   }
 
   render() {
-    const percentage = 66;
-    const { reading } = this.state;
+    const { reading, user } = this.state;
+    const quota = (Number(user.units) / 30);
+    const consumptionPc = Math.floor(((Number(reading.consumption)) / quota) * 100);
+    const availablePC = Math.floor(((Number(reading.available)) / quota) * 100);
     return (
       <>
         <div>
@@ -64,8 +66,8 @@ export class DailyStats extends React.Component {
                 <div className="col">
                   <Circle>
                     <CircularProgressbar
-                      value={percentage}
-                      text={`${percentage}Units`}
+                      value={consumptionPc}
+                      text={`${reading.consumption} Units`}
                       strokeWidth={5}
                       styles={buildStyles({
                         textColor: '#4b627a',
@@ -81,8 +83,8 @@ export class DailyStats extends React.Component {
                 <div className="col">
                   <Circle>
                     <CircularProgressbar
-                      value={percentage}
-                      text={`${percentage}Units`}
+                      value={availablePC}
+                      text={`${reading.available} Units`}
                       strokeWidth={5}
                       styles={buildStyles({
                         textColor: '#4b627a',
@@ -92,14 +94,14 @@ export class DailyStats extends React.Component {
                   </Circle>
                   <div className="text-center">
                     <h6>Available</h6>
-                    <h6>Units</h6>
+                    <h6>Units left</h6>
                   </div>
                 </div>
                 <div className="col">
                   <Circle>
                     <CircularProgressbar
                       value={reading.saved}
-                      text={reading.saved}
+                      text={`${reading.saved}%`}
                       strokeWidth={5}
                       styles={buildStyles({
                         textColor: '#4b627a',
