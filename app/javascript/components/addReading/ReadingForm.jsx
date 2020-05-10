@@ -2,6 +2,8 @@
 /* eslint-disable react/no-unused-state */
 import React from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   Bedroom,
   Study,
@@ -90,6 +92,7 @@ class ReadingForm extends React.Component {
             available: '',
             saved: '',
           });
+          this.props.history.push('/readings');
         }
       });
   }
@@ -211,4 +214,9 @@ class ReadingForm extends React.Component {
   }
 }
 
-export default ReadingForm;
+ReadingForm.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  history: PropTypes.object.isRequired,
+};
+
+export default withRouter(ReadingForm);

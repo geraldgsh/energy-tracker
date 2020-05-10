@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'readings/index'
-      get 'readings/create'
-      get 'readings/show'
-      get 'readings/destroy'
-    end
-  end
-  namespace :api do
-    namespace :v1 do
       get 'readings', to: 'readings#index'
       post 'readings', to: 'readings#create'
       get 'readings/show'
