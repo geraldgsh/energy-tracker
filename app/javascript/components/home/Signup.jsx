@@ -84,8 +84,8 @@ class Signup extends React.Component {
     } = this.state;
     return (
       <div className="tab-content">
+        {this.showErrors()}
         <div id="new">
-          {this.showErrors()}
           <br />
           <fieldset>
             <div className="form-group">
