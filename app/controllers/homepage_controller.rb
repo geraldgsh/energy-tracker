@@ -1,3 +1,5 @@
 class HomepageController < ApplicationController
-  def index; end
+  def index
+    render 'layouts/application'
+  end
 end
