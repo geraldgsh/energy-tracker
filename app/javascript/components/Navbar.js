@@ -1,5 +1,8 @@
+/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-return-assign, jsx-a11y/anchor-is-valid, import/no-named-as-default */
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartLine } from '@fortawesome/free-solid-svg-icons';
 import SignoutBtn from './home/Signout';
 
 const Navbar = () => (
@@ -14,7 +17,7 @@ const Navbar = () => (
         </li>
         <li className="col foot-col nav-item">
           <a onClick={() => window.location.href = '/readings'} className="nav-link" data-toggle="pill" href="#">
-            <i className="fas fa-chart-line" />
+            <FontAwesomeIcon icon={faChartLine} />
             <p>Track.it</p>
           </a>
         </li>
