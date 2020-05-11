@@ -3,7 +3,7 @@ React Rails Redux
 
 ### Snapshot
 
-![]()
+![](https://github.com/geraldgsh/energy-tracker/blob/feature/app/assets/images/screenshot.jpg)
 
 ### Introduction.
 
