@@ -135,7 +135,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faBed} size="4x" />
+                      <FontAwesomeIcon icon={faBed} className="dayStat" size="4x" />
                     </div>
                     <div className="col">
                       <p>Bedroom</p>
@@ -150,7 +150,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faLaptop} size="4x" />
+                      <FontAwesomeIcon icon={faLaptop} className="dayStat" size="4x" />
                     </div>
                     <div className="col">
                       <p>Study</p>
@@ -167,7 +167,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faCar} size="4x" />
+                      <FontAwesomeIcon icon={faCar} className="dayStat" size="4x" />
                     </div>
                     <div className="col">
                       <p>Garage</p>
@@ -182,7 +182,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faCouch} size="4x" />
+                      <FontAwesomeIcon icon={faCouch} className="dayStat" size="4x" />
                     </div>
                     <div className="col">
                       <p>Living</p>
@@ -199,7 +199,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faUtensils} size="4x" />
+                      <FontAwesomeIcon icon={faUtensils} className="dayStat" size="4x" />
                     </div>
                     <div className="col">
                       <p>Kitchen</p>
@@ -214,7 +214,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faUserClock} size="4x" />
+                      <FontAwesomeIcon icon={faUserClock} className="dayStat" size="4x" />
                     </div>
                     <div className="col">
                       <p>Guest</p>

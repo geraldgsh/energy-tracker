@@ -73,7 +73,7 @@ class ReadingList extends React.Component {
             <br />
             <span className="read-sym">
               <Link to={`/user/${reading.user_id}/reading/${reading.id}`}>
-                <FontAwesomeIcon icon={faAngleRight} size="4x" />
+                <FontAwesomeIcon icon={faAngleRight} className="read-list" />
               </Link>
             </span>
           </div>
