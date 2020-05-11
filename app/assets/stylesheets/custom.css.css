@@ -303,6 +303,27 @@ input {
   color: blue;
 }
 
+.circle-text {
+  color: #576d83; 
+  font-Size: 20px; 
+  margin-Top: -5;
+  text-align: center; 
+}
+
+.circle-strong {
+  font-Size: 45px; 
+  margin-Top: -5; 
+}
+
+@media screen and (max-width: 1280px) {
+  .circle-text {
+    font-Size: 15px;
+  }
+  .circle-strong {
+    font-Size: 30px;
+  }
+}
+
 @media screen and (max-width: 720px) {
   #regForm,
   .daily-stats,
@@ -317,5 +338,11 @@ input {
   }
   .graph {
     padding-right: 0 !important;
+  }
+  .circle-text {
+    font-Size: 10px;
+  }
+  .circle-strong {
+    font-Size: 23px;
   }
 }

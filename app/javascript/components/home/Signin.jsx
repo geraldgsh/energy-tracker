@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { SIGNEDIN } from '../../actions';
 
-
 class Signin extends React.Component {
   constructor(props) {
     super(props);

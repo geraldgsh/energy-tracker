@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-return-assign, jsx-a11y/anchor-is-valid, import/no-named-as-default */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

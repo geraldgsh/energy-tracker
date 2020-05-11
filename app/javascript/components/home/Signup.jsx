@@ -2,6 +2,7 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import axios from 'axios';
+import SweetAlert from 'sweetalert2-react';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Signup extends React.Component {
       units: '',
       target: '',
       errors: {},
+      success: false,
     };
   }
 
@@ -40,6 +42,7 @@ class Signup extends React.Component {
             units: '',
             target: '',
             errors: {},
+            success: true,
           });
         }
       });
@@ -55,7 +58,7 @@ class Signup extends React.Component {
 
   render() {
     const {
-      name, email, password, password_confirmation, units, target,
+      name, email, password, password_confirmation, units, target, success,
     } = this.state;
     return (
       <div className="tab-content">
@@ -160,6 +163,8 @@ class Signup extends React.Component {
             </div>
           </div>
         </div>
+        <br />
+        {success ? <SweetAlert show={success} title="Energy Tracker" text="Sign up successful! Proceed to login." /> : ''}
       </div>
     );
   }

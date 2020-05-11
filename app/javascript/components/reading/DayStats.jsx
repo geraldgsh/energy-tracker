@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -77,7 +76,6 @@ export class DailyStats extends React.Component {
                   <Circle>
                     <CircularProgressbarWithChildren
                       value={consumptionPc}
-                      text={`${reading.consumption} Units`}
                       strokeWidth={5}
                       styles={buildStyles({
                         textColor: '#4b627a',
@@ -85,8 +83,11 @@ export class DailyStats extends React.Component {
                         trailColor: '#D6D6D6',
                       })}
                     >
-                      <div style={{ fontSize: 12, marginTop: -5 }}>
-                        <strong>{reading.consumption}</strong>
+                      <div className="circle-text">
+                        <strong className="circle-strong">
+                          {reading.consumption}
+                        </strong>
+                        <br />
                         {' '}
                         Units
                       </div>
@@ -108,8 +109,11 @@ export class DailyStats extends React.Component {
                         trailColor: '#D6D6D6',
                       })}
                     >
-                      <div style={{ fontSize: 12, marginTop: -5 }}>
-                        <strong>{reading.available}</strong>
+                      <div className="circle-text">
+                        <strong className="circle-strong">
+                          {reading.available}
+                        </strong>
+                        <br />
                         {' '}
                         Units
                       </div>
@@ -131,19 +135,19 @@ export class DailyStats extends React.Component {
                         trailColor: '#D6D6D6',
                       })}
                     >
-                      <div style={{ fontSize: 12, marginTop: -5 }}>
-                        <strong>{reading.saved}</strong>
+                      <div className="circle-text">
+                        <strong className="circle-strong">
+                          {reading.saved}
+                        </strong>
+                        <br />
                         {' '}
-                        Units
+                        %
                       </div>
                     </CircularProgressbarWithChildren>
                   </Circle>
                   <div className="text-center">
                     <h6>
-                      {reading.saved}
-                      %
-                      {' '}
-                      saved
+                      Saved
                     </h6>
                   </div>
                 </div>
@@ -154,7 +158,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faBed} className="v" size="4x" />
+                      <FontAwesomeIcon icon={faBed} className="dayStat" size="4x" />
                     </div>
                     <div className="col">
                       <p>Bedroom</p>
