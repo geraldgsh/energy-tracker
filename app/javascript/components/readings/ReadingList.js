@@ -2,6 +2,8 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import {
   CircularProgressbar,
   buildStyles,
@@ -9,7 +11,6 @@ import {
 import 'react-circular-progressbar/dist/styles.css';
 import { Link } from 'react-router-dom';
 import Circle from '../graph/ReadGraph';
-
 
 class ReadingList extends React.Component {
   constructor(props) {
@@ -65,7 +66,6 @@ class ReadingList extends React.Component {
             </span>
           </div>
         </div>
-
         <div className="col-3 container graph-valuebox">
           <div className="row graph-value">
             {reading.available}
@@ -73,7 +73,7 @@ class ReadingList extends React.Component {
             <br />
             <span className="read-sym">
               <Link to={`/user/${reading.user_id}/reading/${reading.id}`}>
-                <i className="fas fa-angle-right" />
+                <FontAwesomeIcon icon={faAngleRight} size="4x" />
               </Link>
             </span>
           </div>

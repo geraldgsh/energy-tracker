@@ -1,4 +1,14 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBed,
+  faLaptop,
+  faCar,
+  faCouch,
+  faUtensils,
+  faUserClock,
+} from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import moment from 'moment';
@@ -125,7 +135,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <i className="fas fa-bed fa-4x" />
+                      <FontAwesomeIcon icon={faBed} size="4x" />
                     </div>
                     <div className="col">
                       <p>Bedroom</p>
@@ -140,7 +150,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <i className="fas fa-laptop fa-4x" />
+                      <FontAwesomeIcon icon={faLaptop} size="4x" />
                     </div>
                     <div className="col">
                       <p>Study</p>
@@ -157,7 +167,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <i className="fas fa-car fa-4x" />
+                      <FontAwesomeIcon icon={faCar} size="4x" />
                     </div>
                     <div className="col">
                       <p>Garage</p>
@@ -172,7 +182,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <i className="fas fa-couch fa-4x" />
+                      <FontAwesomeIcon icon={faCouch} size="4x" />
                     </div>
                     <div className="col">
                       <p>Living</p>
@@ -189,7 +199,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <i className="fas fa-utensils fa-4x" />
+                      <FontAwesomeIcon icon={faUtensils} size="4x" />
                     </div>
                     <div className="col">
                       <p>Kitchen</p>
@@ -204,7 +214,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <i className="fas fa-user-clock fa-4x" />
+                      <FontAwesomeIcon icon={faUserClock} size="4x" />
                     </div>
                     <div className="col">
                       <p>Guest</p>

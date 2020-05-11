@@ -2,7 +2,12 @@
 /* eslint-disable no-return-assign, jsx-a11y/anchor-is-valid, import/no-named-as-default */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChartBar,
+  faChartLine,
+  faChartPie,
+  faEllipsisH
+} from '@fortawesome/free-solid-svg-icons';
 import SignoutBtn from './home/Signout';
 
 const Navbar = () => (
@@ -11,7 +16,7 @@ const Navbar = () => (
       <ul className="row foot-row nav nav-pills tablist" role="tablist">
         <li className="col foot-col nav-item">
           <a onClick={() => window.location.href = '/addreading'} className="nav-link" data-toggle="pill" href="#">
-            <i className="fas fa-chart-bar" />
+            <FontAwesomeIcon icon={faChartBar} />
             <p>Add Readings</p>
           </a>
         </li>
@@ -23,14 +28,14 @@ const Navbar = () => (
         </li>
         <li className="col foot-col nav-item">
           <a onClick={() => window.location.href = '/report'} className="nav-link" data-toggle="pill" href="#">
-            <i className="fas fa-chart-pie" />
+            <FontAwesomeIcon icon={faChartPie} />
             <p>Report</p>
           </a>
         </li>
         <li className="col foot-col nav-item">
           <a className="nav-link" data-toggle="pill" href="#">
             <SignoutBtn />
-            {/* <i className="fas fa-ellipsis-h" />
+            {/* <FontAwesomeIcon icon={faEllipsisH} />
             <p>More</p> */}
           </a>
         </li>
