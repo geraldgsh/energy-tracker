@@ -33,8 +33,8 @@ E-Leaf have just released an open tender for a tracking mobile app. The tender c
 5. Apps design should follow [this design](https://www.behance.net/gallery/13271423/Bodytrackit-An-iOs-app-Branding-UX-and-UI)
 6. User can seamlessly select and view individual day readings.
 7. App must be responsive, on both tablet and desktop versions, following given design guidelines.
-8. During sign up, users must input month purchased units (i.e. 1800, 2100, 2400, 2700, 3000).
-9. During signup, users must input percentage of target savings (i.e. 5%, 10%, 15%, 20%, 25%).
+8. During sign up, users must input month purchased units (i.e. 1800, 2100, 2400, 2700, 3000). Selected units will be divided by numbers of days in a month to derive daily quota.
+9. During signup, users must input percentage of target savings (i.e. 5%, 10%, 15%, 20%, 25%). Selected target will be calculated against total month consumption to see if target is met.
 
 ### Tools
 
