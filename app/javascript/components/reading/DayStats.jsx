@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import moment from 'moment';
 import {
-  CircularProgressbar,
+  CircularProgressbarWithChildren,
   buildStyles,
 } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -75,7 +75,7 @@ export class DailyStats extends React.Component {
               <div className="row">
                 <div className="col">
                   <Circle>
-                    <CircularProgressbar
+                    <CircularProgressbarWithChildren
                       value={consumptionPc}
                       text={`${reading.consumption} Units`}
                       strokeWidth={5}
@@ -84,7 +84,13 @@ export class DailyStats extends React.Component {
                         pathColor: '#94e490',
                         trailColor: '#D6D6D6',
                       })}
-                    />
+                    >
+                      <div style={{ fontSize: 12, marginTop: -5 }}>
+                        <strong>{reading.consumption}</strong>
+                        {' '}
+                        Units
+                      </div>
+                    </CircularProgressbarWithChildren>
                   </Circle>
                   <div className="text-center">
                     <h6>Total</h6>
@@ -93,16 +99,21 @@ export class DailyStats extends React.Component {
                 </div>
                 <div className="col">
                   <Circle>
-                    <CircularProgressbar
+                    <CircularProgressbarWithChildren
                       value={availablePC}
-                      text={`${reading.available} Units`}
                       strokeWidth={5}
                       styles={buildStyles({
                         textColor: '#4b627a',
                         pathColor: '#94e490',
                         trailColor: '#D6D6D6',
                       })}
-                    />
+                    >
+                      <div style={{ fontSize: 12, marginTop: -5 }}>
+                        <strong>{reading.available}</strong>
+                        {' '}
+                        Units
+                      </div>
+                    </CircularProgressbarWithChildren>
                   </Circle>
                   <div className="text-center">
                     <h6>Available</h6>
@@ -111,16 +122,21 @@ export class DailyStats extends React.Component {
                 </div>
                 <div className="col">
                   <Circle>
-                    <CircularProgressbar
+                    <CircularProgressbarWithChildren
                       value={reading.saved}
-                      text={`${reading.saved}%`}
                       strokeWidth={5}
                       styles={buildStyles({
                         textColor: '#4b627a',
                         pathColor: '#94e490',
                         trailColor: '#D6D6D6',
                       })}
-                    />
+                    >
+                      <div style={{ fontSize: 12, marginTop: -5 }}>
+                        <strong>{reading.saved}</strong>
+                        {' '}
+                        Units
+                      </div>
+                    </CircularProgressbarWithChildren>
                   </Circle>
                   <div className="text-center">
                     <h6>
@@ -138,7 +154,7 @@ export class DailyStats extends React.Component {
                 <div className="col room-card">
                   <div className="row">
                     <div className="col">
-                      <FontAwesomeIcon icon={faBed} className="dayStat" size="4x" />
+                      <FontAwesomeIcon icon={faBed} className="v" size="4x" />
                     </div>
                     <div className="col">
                       <p>Bedroom</p>
