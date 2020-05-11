@@ -48,7 +48,7 @@ nav h1 {
   color: #acafb4; 
 }
 
-.nav-pills .nav-link i {
+.nav-pills .nav-link FontAwesomeIcon {
   font-size: 1.5em;
   line-height: 1.3;
 }
@@ -70,7 +70,7 @@ nav h1 {
   padding-left: 30px;
 }
 
-.sign-in-up .left-inner-addon i {
+.sign-in-up .left-inner-addon FontAwesomeIcon {
   position: absolute;
   padding: 10px 12px;
   pointer-events: none;
@@ -84,7 +84,7 @@ nav h1 {
   padding-right: 30px;
 }
 
-.sign-in-up .right-inner-addon i {
+.sign-in-up .right-inner-addon FontAwesomeIcon {
   position: absolute;
   right: 0px;
   padding: 17px 12px;
@@ -221,7 +221,7 @@ input {
   text-align: center;
 }
 
-.room-card .col i {
+.room-card .col FontAwesomeIcon {
   color: #42B5E8;
 }
 
@@ -308,7 +308,7 @@ input {
   .circular-dimension {
     width: 135px;
   }
-  .room-card .row .col i {    
+  .room-card .row .col FontAwesomeIcon {    
     font-size: 3em;
   }
   .graph {
