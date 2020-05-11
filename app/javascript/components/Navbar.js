@@ -16,26 +16,26 @@ const Navbar = () => (
       <ul className="row foot-row nav nav-pills tablist" role="tablist">
         <li className="col foot-col nav-item">
           <a onClick={() => window.location.href = '/addreading'} className="nav-link" data-toggle="pill" href="#">
-            <FontAwesomeIcon icon={faChartBar} />
+            <FontAwesomeIcon icon={faChartBar} className="navIcon" />
             <p>Add Readings</p>
           </a>
         </li>
         <li className="col foot-col nav-item">
           <a onClick={() => window.location.href = '/readings'} className="nav-link" data-toggle="pill" href="#">
-            <FontAwesomeIcon icon={faChartLine} />
+            <FontAwesomeIcon icon={faChartLine} className="navIcon" />
             <p>Track.it</p>
           </a>
         </li>
         <li className="col foot-col nav-item">
           <a onClick={() => window.location.href = '/report'} className="nav-link" data-toggle="pill" href="#">
-            <FontAwesomeIcon icon={faChartPie} />
+            <FontAwesomeIcon icon={faChartPie} className="navIcon" />
             <p>Report</p>
           </a>
         </li>
         <li className="col foot-col nav-item">
           <a className="nav-link" data-toggle="pill" href="#">
             <SignoutBtn />
-            {/* <FontAwesomeIcon icon={faEllipsisH} />
+            {/* <FontAwesomeIcon icon={faEllipsisH} className="navIcon" />
             <p>More</p> */}
           </a>
         </li>

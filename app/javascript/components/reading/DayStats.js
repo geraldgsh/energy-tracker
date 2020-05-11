@@ -82,6 +82,7 @@ export class DailyStats extends React.Component {
                       styles={buildStyles({
                         textColor: '#4b627a',
                         pathColor: '#94e490',
+                        trailColor: '#D6D6D6',
                       })}
                     />
                   </Circle>
@@ -99,6 +100,7 @@ export class DailyStats extends React.Component {
                       styles={buildStyles({
                         textColor: '#4b627a',
                         pathColor: '#94e490',
+                        trailColor: '#D6D6D6',
                       })}
                     />
                   </Circle>
@@ -116,6 +118,7 @@ export class DailyStats extends React.Component {
                       styles={buildStyles({
                         textColor: '#4b627a',
                         pathColor: '#94e490',
+                        trailColor: '#D6D6D6',
                       })}
                     />
                   </Circle>
