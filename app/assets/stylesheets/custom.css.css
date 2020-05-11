@@ -221,7 +221,7 @@ input {
   text-align: center;
 }
 
-.dayStat {
+.room-card .col .dayStat {
   color: #42B5E8;
 }
 
