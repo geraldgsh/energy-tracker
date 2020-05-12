@@ -387,6 +387,14 @@ input {
   font-weight: 600;
 }
 
+.btn-danger {
+  background-color: red;
+}
+
+.btn-danger:hover {
+  background-color: rgb(100, 0, 0);
+}
+
 @media screen and (max-width: 1280px) {
   .circle-text {
     font-Size: 15px;
