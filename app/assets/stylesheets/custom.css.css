@@ -315,6 +315,78 @@ input {
   margin-Top: -5; 
 }
 
+.more {
+  background-color: #f3f4f6;
+  height: 100vh;
+  margin: auto;
+  margin-top: 22px;
+  margin-bottom: 2em;
+  padding: 0 0 40px 0;
+  width: 70%;
+  min-width: 300px;
+}
+
+.more-list {
+  background-color: white;
+  height: 75px;
+  margin: 10px 0 0 0 !important;  
+  text-align: center;
+}
+
+.img-circle {
+  border-radius: 50%;
+  border: #42B5E8 2px solid;
+  float: right;  
+  margin-right: 10px;
+  margin-top: 12.5px;
+  overflow: hidden;
+  position: relative; 
+}
+
+.hor img {
+  height: auto;   
+  max-width: 50px; 
+  max-height: 50px;
+  width: auto;  
+}
+
+.profile-content {
+  text-align: left;
+  margin: auto 0 auto 0;
+}
+
+.profile-name {
+  color: #576d83;
+}
+
+.more-items {
+  background-color: #f3f4f6d3;
+  border-top: 1px #e4e5e6d3 solid;
+  height: 50px;
+  margin: 1px 0 0 0 !important; 
+}
+
+.more-icons {
+  color: #576d83;  
+  font-size: 1.5em;
+  margin: auto 0 auto 0;
+  text-align: end;
+}
+
+.more-icon {
+  margin-right: 25px;
+}
+
+.more-texts {
+  text-align: left;
+  margin: auto 0 auto 0;
+}
+
+.more-text {
+  color: #576d83;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 1280px) {
   .circle-text {
     font-Size: 15px;
@@ -327,6 +399,7 @@ input {
 @media screen and (max-width: 720px) {
   #regForm,
   .daily-stats,
+  .more,
   .readlist {
     width: 100%;
   }

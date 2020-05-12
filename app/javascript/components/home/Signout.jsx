@@ -20,7 +20,7 @@ export class SignoutBtn extends Component {
       <>
         <button
           type="button"
-          className="btn btn-warning"
+          className="btn btn-danger btn-block"
           onClick={(e) => this.onSubmit(e)}
         >
           Logout
