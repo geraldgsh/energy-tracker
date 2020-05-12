@@ -7,6 +7,7 @@ import {
   faCog,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import SignoutBtn from '../home/Signout';
 
 const Settings = () => {
   const userName = JSON.parse(localStorage.getItem('redux')).name;
@@ -61,6 +62,9 @@ const Settings = () => {
         <div className="col-8 container more-texts">
           <strong className="more-text">Help</strong>
         </div>
+      </div>
+      <div className="row more-items">
+        <SignoutBtn />
       </div>
     </div>
   );
