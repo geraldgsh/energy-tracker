@@ -1,6 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCrosshairs } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCrosshairs,
+  faEnvelope,
+  faUser,
+  faCog,
+  faInfoCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
 const Settings = () => {
   const userName = JSON.parse(localStorage.getItem('redux')).name;
@@ -22,6 +28,38 @@ const Settings = () => {
         </div>
         <div className="col-8 container more-texts">
           <strong className="more-text">Your Target</strong>
+        </div>
+      </div>
+      <div className="row more-items">
+        <div className="col-4 container more-icons">
+          <FontAwesomeIcon icon={faEnvelope} className="more-icon" />
+        </div>
+        <div className="col-8 container more-texts">
+          <strong className="more-text">Mailing List</strong>
+        </div>
+      </div>
+      <div className="row more-items">
+        <div className="col-4 container more-icons">
+          <FontAwesomeIcon icon={faUser} className="more-icon" />
+        </div>
+        <div className="col-8 container more-texts">
+          <strong className="more-text">Your Profile</strong>
+        </div>
+      </div>
+      <div className="row more-items">
+        <div className="col-4 container more-icons">
+          <FontAwesomeIcon icon={faCog} className="more-icon" />
+        </div>
+        <div className="col-8 container more-texts">
+          <strong className="more-text">Settings</strong>
+        </div>
+      </div>
+      <div className="row more-items">
+        <div className="col-4 container more-icons">
+          <FontAwesomeIcon icon={faInfoCircle} className="more-icon" />
+        </div>
+        <div className="col-8 container more-texts">
+          <strong className="more-text">Help</strong>
         </div>
       </div>
     </div>
