@@ -9,6 +9,7 @@ import Readings from '../containers/Readings';
 import Reading from '../containers/Reading';
 import AddReading from '../containers/AddReading';
 import Report from '../containers/Report';
+import More from '../containers/More';
 import reducer from '../reducer/sessions';
 
 
@@ -26,6 +27,7 @@ export default (
         <Route path="/readings" component={Readings} />
         <Route path="/report" component={Report} />
         <Route path="/user/:userId/reading/:id" component={Reading} />
+        <Route path="/more" component={More} />
       </Switch>
     </Router>
   </Provider>
