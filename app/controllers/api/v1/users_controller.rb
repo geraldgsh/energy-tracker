@@ -30,7 +30,7 @@ class Api::V1::UsersController < ApplicationController
         data: User.all.as_json
       }
     else
-      render json: @users.errors
+      render json: @users.errors.messages
     end
   end
 
@@ -43,7 +43,7 @@ class Api::V1::UsersController < ApplicationController
         data: @users.as_json
       }
     else
-      render json: @users.errors
+      render json: @users.errors.messages
     end
   end
 
