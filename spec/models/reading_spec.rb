@@ -18,7 +18,7 @@ RSpec.describe Reading, type: :model do
     it 'should not be empty' do
       @reading = @user.readings.build(garage: '')
       expect(@reading.valid?).to eql(false)
-      expect(@reading.errors.messages[:bedroom]).to include("can't be blank")
+      expect(@reading.errors.messages[:garage]).to include("can't be blank")
     end
     it 'should not be empty' do
       @reading = @user.readings.build(living: '')

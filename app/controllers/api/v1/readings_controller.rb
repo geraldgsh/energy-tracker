@@ -57,28 +57,28 @@ class Api::V1::ReadingsController < ApplicationController
   end
 
   def list_readings_by_user
-    @readings = Reading.all
-    @readings = Reading.where(params[:user_id])
-    if @readings
+    @readingList = Reading.all
+    @readingList = Reading.where(user_id: params[:id])
+    if @readingList
       render json: {
         code: 200,
-        data: @readings.as_json
+        data: @readingList.as_json
       }
     else
-      render json: @readings.errors
+      render json: @readingList.errors
     end
   end
 
   def list_reading
-    @read = Reading.all
-    @read = Reading.find_by(user_id: params[:user_id], id: params[:id])
-    if @read
+    @reads = Reading.all
+    @reads = Reading.find_by(user_id: params[:user_id], id: params[:id])
+    if @reads
       render json: {
         code: 200,
-        data: @read.as_json
+        data: @reads.as_json
       }
     else
-      render json: @read.errors
+      render json: @reads.errors
     end
   end
 
