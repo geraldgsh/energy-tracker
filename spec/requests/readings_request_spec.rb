@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Readings", type: :request do
   let!(:user) { create(:user) }
-  let!(:readings) { create_list(:reading, 20, user_id: user.id) }
+  let!(:readings) { create_list(:reading, 2, user_id: user.id) }
   let(:user_id) { user.id }
   let(:id) { readings.first.id }
 
