@@ -40,7 +40,7 @@ RSpec.describe "Users", type: :request do
 end
 
 describe 'POST /api/v1/users' do
-  let! (:valid_attributes) { { name: 'Bruce Wayne', email: 'batman@email.com', password: 'password', password_confirmation: 'password', units: 1800, target: 5 } }
+  let! (:valid_attributes) { {user: { name: 'Bruce tester', email: 'tester@email.com', password: 'password', password_confirmation: 'password', units: 1800, target: 5 } } }
 
   context 'when the request is valid' do
     before { post '/api/v1/users', params: valid_attributes }
@@ -51,7 +51,7 @@ describe 'POST /api/v1/users' do
   end
 
   context 'when the request is invalid' do
-    before { post '/api/v1/users', params: { name: ' ', email: ' ', password: 'password', password_confirmation: 'password', units: 1800, target: 5 } }
+    before { post '/api/v1/users', params: { user: { name: ' ', email: ' ', password: 'password', password_confirmation: 'password', units: 1800, target: 5 } } }
 
     it 'return status code 400' do
       expect(json["code"]).to eq(400)
