@@ -7,6 +7,7 @@ import {
   faCog,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
+// eslint-disable-next-line import/no-named-as-default
 import SignoutBtn from '../home/Signout';
 
 const Settings = () => {
