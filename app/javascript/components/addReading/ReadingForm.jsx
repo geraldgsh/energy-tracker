@@ -15,7 +15,7 @@ import {
 class ReadingForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    const defaultState = {
       currentStep: 1,
       bedroom: '',
       study: '',
@@ -26,6 +26,7 @@ class ReadingForm extends React.Component {
       units: '',
       quota: '',
     };
+    this.state = defaultState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.prev = this.prev.bind(this);
