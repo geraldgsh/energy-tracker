@@ -5,7 +5,7 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
-gem 'pg'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -46,17 +46,18 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'shoulda-matchers'
   gem 'webdrivers'
 end
 
-group :production do    
-    gem 'pg'
-    gem 'rails_12factor'
-    gem 'heroku-deflater'   
+group :production do
+  gem 'heroku-deflater'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

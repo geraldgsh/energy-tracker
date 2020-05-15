@@ -15,7 +15,7 @@ import {
 class ReadingForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    const defaultState = {
       currentStep: 1,
       bedroom: '',
       study: '',
@@ -26,6 +26,7 @@ class ReadingForm extends React.Component {
       units: '',
       quota: '',
     };
+    this.state = defaultState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.prev = this.prev.bind(this);
@@ -98,23 +99,7 @@ class ReadingForm extends React.Component {
 
   next() {
     let { currentStep } = this.state;
-    switch (currentStep) {
-      case 2:
-        currentStep = 3;
-        break;
-      case 3:
-        currentStep = 4;
-        break;
-      case 4:
-        currentStep = 5;
-        break;
-      case 5:
-        currentStep = 6;
-        break;
-      default:
-        currentStep += 1;
-    }
-
+    currentStep = currentStep === 6 ? 6 : currentStep + 1;
     this.setState({
       currentStep,
     });
@@ -122,15 +107,12 @@ class ReadingForm extends React.Component {
 
   prev() {
     let { currentStep } = this.state;
-    currentStep = currentStep <= 1 ? 1 : currentStep - 1;
+    currentStep = currentStep === 1 ? 1 : currentStep - 1;
     this.setState({
       currentStep,
     });
   }
 
-  /*
-  * the functions for our button
-  */
   previousButton() {
     const { currentStep } = this.state;
     if (currentStep !== 1) {

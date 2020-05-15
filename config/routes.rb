@@ -1,26 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'readings', to: 'readings#index'
-      post 'readings', to: 'readings#create'
-      get 'readings/show'
-      get 'readings/destroy'
-      get '/readings/:id', to: 'readings#show'
+      resources :readings, only: [:create, :index, :show]
       get '/readings/user/:id', to: 'readings#list_readings_by_user'
       get '/user/:user_id/reading/:id', to: 'readings#list_reading'
-    end
-  end
-  namespace :api do
-    namespace :v1 do
-      post 'users', to: 'users#create'
-      get 'users', to: 'users#index'
+      resources :users, only: [:create, :index]
       get 'users/:id', to: 'users#find_user'
-    end
-  end
-  namespace :api do
-    namespace :v1 do
-      post 'users/sessions', to: 'users/sessions#create'
       delete 'users/sessions', to: 'users/sessions#destroy'
+      namespace :users do
+        resources :sessions, only: [:create]
+      end
     end
   end
   root 'homepage#index'

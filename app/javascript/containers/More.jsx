@@ -1,11 +1,11 @@
 import React from 'react';
-import Head from '../components/profile/Head';
+import Head from '../components/Head';
 import Settings from '../components/profile/Settings';
 import Navbar from '../components/Navbar';
 
 export default () => (
   <div>
-    <Head />
+    <Head title="More" />
     <Settings />
     <Navbar />
   </div>

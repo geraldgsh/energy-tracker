@@ -25,7 +25,14 @@ class Signup extends React.Component {
       name, email, password, password_confirmation, units, target,
     } = this.state;
     axios.post('/api/v1/users', {
-      name, email, password, password_confirmation, units, target,
+      user: {
+        name,
+        email,
+        password,
+        password_confirmation,
+        units,
+        target,
+      },
     })
       .then((response) => response.data)
       .then((response) => {

@@ -1,10 +1,10 @@
 import React from 'react';
-import Head from '../components/report/Head';
+import Head from '../components/Head';
 import Navbar from '../components/Navbar';
 
 export default () => (
   <div>
-    <Head />
+    <Head title="Report" />
     <Navbar />
   </div>
 );
