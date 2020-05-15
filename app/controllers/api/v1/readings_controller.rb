@@ -43,14 +43,14 @@ class Api::V1::ReadingsController < ApplicationController
   def destroy; end
 
   def list_readings_by_user
-    @readingList = Reading.where(user_id: params[:id])
-    if @readingList
+    @readinglist = Reading.where(user_id: params[:id])
+    if @readinglist
       render json: {
         code: 200,
-        data: @readingList.as_json
+        data: @readinglist.as_json
       }
     else
-      render json: @readingList.errors
+      render json: @readinglist.errors
     end
   end
 

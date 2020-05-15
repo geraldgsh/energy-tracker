@@ -51,7 +51,7 @@ class Api::V1::UsersController < ApplicationController
       :password,
       :password_confirmation,
       :units,
-      :target,
+      :target
     )
   end
 end

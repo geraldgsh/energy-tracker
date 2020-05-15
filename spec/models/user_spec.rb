@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let! (:users) { create_list(:user, 10) }
+  let!(:users) { create_list(:user, 10) }
 
   it { should have_many(:readings) }
   it { should validate_presence_of(:name) }

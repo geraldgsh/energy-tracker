@@ -46,18 +46,18 @@ group :development do
 end
 
 group :test do
+  gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'shoulda-matchers'
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
   gem 'webdrivers'
 end
 
-group :production do    
-    gem 'pg'
-    gem 'rails_12factor'
-    gem 'heroku-deflater'   
+group :production do
+  gem 'heroku-deflater'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

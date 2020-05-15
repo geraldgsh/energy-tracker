@@ -9,6 +9,6 @@ FactoryBot.define do
     consumption { Faker::Number.between(from: 1, to: 10) }
     available { Faker::Number.between(from: 1, to: 10) }
     saved { Faker::Number.between(from: 1, to: 10) }
-    user_id { nil }  
+    user_id { nil }
   end
 end
