@@ -65,7 +65,7 @@ Instructions [here](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-1-
 7. Specific navbar button stays highlighted for each respective feature view
 8. Add user profile page
 9. Users can delete own reading entry
-10. Notification alert when availables units are low. 
+10. Notification alert when available units are low. 
 
 ### To begin
 
