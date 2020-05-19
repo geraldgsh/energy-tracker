@@ -14,8 +14,7 @@ import reducer from '../reducer/sessions';
 
 
 const store = createStore(
-  reducer, compose(persistState(),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()),
+  reducer, compose(persistState()),
 );
 
 export default (
