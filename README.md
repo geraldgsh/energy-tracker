@@ -68,7 +68,7 @@ Instructions [here](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-1-
 
 ### To begin
 
-1. Clone Repo
+1. Clone Repo by using this command 'git clone --branch feature https://github.com/geraldgsh/energy-tracker.git'. 
 2. 'npm install' to install dependencies
 3. Follow [this instruction](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-2-%E2%80%94-Setting-Up-the-Database) for DB setup.
 4. Run 'rails db:migrate' to initialize
@@ -89,7 +89,7 @@ Finished in 0.26756 seconds (files took 2.63 seconds to load)
 
 ### Wiki
 
-Checkout our [wikipage](https://github.com/geraldgsh/energy-tracker/wiki) for more details. 
+Checkout [wikipage](https://github.com/geraldgsh/energy-tracker/wiki) for more details. 
 
 #### Live Demo
 [Demo](https://energy-track.herokuapp.com/)
