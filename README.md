@@ -21,7 +21,7 @@ A new Kickstart company; E-Leaf have recently developed an IOT Smart Meter that 
 Core features are;
 
 a. Take energy measurements of various room.
-b. Communicates the information to the cloud for monitoring.
+b. Communicates the information to cloud for monitoring.
 c. Keeps track of prepaid units and warns user when unit balance is running low.
 
 E-Leaf have just released an open tender for a tracking mobile app. The tender calls for a basic proof of concept with the following hard requirements.
@@ -64,7 +64,8 @@ Instructions [here](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-1-
 6. Input validation; next button do not work if users do not key in an input
 7. Specific navbar button stays highlighted for each respective feature view
 8. Add user profile page
-9. Users can delete own reading entry 
+9. Users can delete own reading entry
+10. Notification when availables units are low. 
 
 ### To begin
 
