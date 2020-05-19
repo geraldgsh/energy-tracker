@@ -49,6 +49,7 @@ E-Leaf have just released an open tender for a tracking mobile app. The tender c
 * ES6
 * Webpack
 * prop-types
+* SweetAlert
 
 ### Linter Setup
 
