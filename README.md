@@ -70,7 +70,7 @@ Instructions [here](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-1-
 
 1. Clone Repo
 2. 'npm install' to install dependencies
-3. Follow [this instruction] for DB setup.
+3. Follow [this instruction](https://github.com/geraldgsh/energy-tracker/wiki/%23-Step-2-%E2%80%94-Setting-Up-the-Database) for DB setup.
 4. Run 'rails db:migrate' to initialize
 5. Type `rails server` in terminal within root project folder.
 6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
