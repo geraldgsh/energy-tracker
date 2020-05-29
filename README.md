@@ -3,7 +3,7 @@ React Rails Redux
 
 ### Snapshot
 
-![](https://github.com/geraldgsh/energy-tracker/blob/feature/app/assets/images/screenshot.jpg)
+![](https://github.com/geraldgsh/energy-tracker/blob/feature/app/assets/images/entracker.jpg)
 
 ### Introduction.
 
@@ -93,8 +93,8 @@ Finished in 0.26756 seconds (files took 2.63 seconds to load)
 
 Checkout [wikipage](https://github.com/geraldgsh/energy-tracker/wiki) for more details. 
 
-#### Live Demo
-[Demo](https://energy-track.herokuapp.com/)
+#### Live
+[Link](https://energy-track.herokuapp.com/)
 
 
 #### Prerequisites
